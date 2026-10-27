@@ -77,16 +77,102 @@ def tg_img(png, caption):
     return tg("sendDocument", caption=caption, files={"document": ("arte.png", png)})
 
 # ---------- OCR: data e hora no topo da arte do torneio ----------
+def _ocr(im, cfg):
+    return pytesseract.image_to_string(im, config=cfg).strip()
+
+def _prep(crop, sc):
+    g = ImageOps.invert(ImageOps.autocontrast(crop)).resize((crop.width * sc, crop.height * sc), Image.LANCZOS)
+    return ImageOps.expand(g, 30, fill=255)
+
+def _hora(t):
+    t = t.replace("O", "0").replace("o", "0").replace(" ", "")
+    m = re.search(r"(\d{1,2})[:Hh.](\d{2})", t) or re.search(r"^\D*(\d{2})(\d{2})\D*$", t)
+    if m: h, mi = int(m.group(1)), int(m.group(2))
+    else:
+        m = re.search(r"(\d{1,2})[Hh]\D*$", t)
+        if not m: return None
+        h, mi = int(m.group(1)), 0
+    return (h, mi) if h < 24 and mi < 60 and mi % 5 == 0 else None
+
 def le_data_hora(img):
     W, H = img.size
-    top = img.convert("RGB").crop((0, 0, W, int(H * 0.22)))
-    g = ImageOps.invert(ImageOps.autocontrast(top.convert("L"))).resize((top.width * 2, top.height * 2))
-    t = pytesseract.image_to_string(g, config="--psm 6")
-    m = re.search(r"(\d{1,2})\s*/\s*(\d{1,2}).{0,25}?(\d{1,2})\s*[:.]\s*(\d{2})", t)
-    if not m: return None
-    d, mo, h, mi = map(int, m.groups())
-    if not (1 <= d <= 31 and 1 <= mo <= 12 and h < 24 and mi < 60): return None
-    return d, mo, h, mi
+    gray = img.convert("L"); top = np.array(gray.crop((0, 0, W, int(H * 0.22))))
+    cols = np.where((top > 170).sum(axis=0) > 0)[0]; rows = np.where((top > 170).sum(axis=1) > 0)[0]
+    if len(cols) < 50 or len(rows) < 5: return None
+    x0, x1, y0, y1 = cols.min(), cols.max(), rows.min(), rows.max()
+    line = gray.crop((max(0, x0 - 5), max(0, y0 - 5), min(W, x1 + 5), min(int(H * 0.22), y1 + 5)))
+    w = line.width
+    # data: parte da esquerda da linha
+    dm = None
+    for sc in (2, 3, 4):
+        t = _ocr(_prep(line, sc), "--psm 7")
+        m = re.search(r"(\d{1,2})\s*/\s*(\d{1,2})", t)
+        if m and 1 <= int(m.group(1)) <= 31 and 1 <= int(m.group(2)) <= 12: dm = (int(m.group(1)), int(m.group(2))); break
+    # hora: parte da direita da linha
+    hm = None
+    for sc in (4, 3, 6, 2):
+        t = _ocr(_prep(line.crop((int(w * 0.66), 0, w, line.height)), sc), "--psm 7 -c tessedit_char_whitelist=0123456789:HhxX")
+        hm = _hora(t)
+        if hm: break
+    if not (dm and hm): return None
+    return dm[0], dm[1], hm[0], hm[1]
+
+# ---------- informações da arte (GTD, buy-in, late) e legenda ----------
+PKO = {"THE START", "THE LOW", "HIGH ROLLER", "HIGH ROLLER LIGHT", "MINI HIGH ROLLER"}   # editar se mudar
+SITE = "www.northpokeronline.com.br"
+
+def _band(gray, a, b, sc, thr=False, cfg="--psm 6"):
+    W, H = gray.size; c = gray.crop((0, int(H * a), W, int(H * b)))
+    c = c.point(lambda v: 0 if v > 120 else 255) if thr else ImageOps.invert(ImageOps.autocontrast(c))
+    c = c.resize((int(c.width * sc), int(c.height * sc)), Image.LANCZOS)
+    return pytesseract.image_to_string(c, config=cfg).strip().replace("\n", " ")
+
+def le_info(img):
+    g = img.convert("L"); info = {}
+    t = _band(g, .63, .74, 2)
+    m = re.search(r"BUY\W*IN\s*(\d+)", t, re.I); info["buyin"] = m.group(1) if m else None
+    m = re.search(r"LATE\s*(\d+)", t, re.I); info["late"] = m.group(1) if m else None
+    info["gtd"] = None
+    for a, b, sc in ((.34, .64, .5), (.38, .60, .75), (.34, .64, .75)):
+        t = _band(g, a, b, sc, thr=True)
+        m = re.search(r"(\d+)\s*(K?)\s*G\w{0,2}D", t)
+        if m and (m.group(1) != "1" or m.group(2)): info["gtd"] = (m.group(1) + m.group(2)).upper(); break
+        if re.search(r"[TI1lA~|]\s*K\s*G\w{0,2}D", t): info["gtd"] = "1K"; break
+    return info
+
+MODELOS = [
+ "🔥 {nome} começa às {hora}!\n{linha}\nA mesa tá armada, bora sentar? ♠️",
+ "♠️ Hora de dar all-in! {nome} às {hora}.\n{linha}\nPega sua cadeira! 🃏",
+ "🃏 Show de cartas! {nome} abre às {hora}.\n{linha}\nQuem vem pra mesa?",
+ "⏰ Faltam poucos minutos pro {nome} ({hora})!\n{linha}\nNão fica de fora! 🔥",
+ "🚀 Bora subir o stack! {nome} às {hora}.\n{linha}\nO flop espera por você ♥️",
+ "♣️ {nome} vai rolar às {hora}!\n{linha}\nChega, senta e joga! 🎯",
+ "🔔 Última chamada! {nome} às {hora}.\n{linha}\nVem buscar o seu pote! 💰",
+ "♦️ A bolha estoura às {hora}! {nome}.\n{linha}\nTá com o jogo? Então bora! 🔥",
+]
+
+MODELOS_GRADE = [
+ "🔥 A grade de hoje tá no ar! {dia}, {data}.\nTorneio pra todo gosto, do começo ao fim da noite. Escolhe o seu e bora pra mesa! ♠️",
+ "🃏 Grade de {dia} ({data}) liberada!\nDá uma olhada nos horários e já separa o seu stack. Hoje tem jogo! 🔥",
+ "♠️ Salve, galera! Confira a grade de hoje ({data}).\nTem GTD rolando, bounty e muita ação. Quem vem? 🎯",
+ "🚀 Bora pra mais um dia de poker! Grade de {dia}, {data}.\nMarca o horário do seu torneio favorito e senta com a gente ♥️",
+]
+DIAS_NOME = ["segunda", "terça", "quarta", "quinta", "sexta", "sábado", "domingo"]
+
+def legenda_grade(hoje, idx, atualizada=False):
+    t = MODELOS_GRADE[idx % len(MODELOS_GRADE)].format(dia=DIAS_NOME[hoje.weekday()], data=hoje.strftime("%d/%m"))
+    if atualizada: t = "🔄 GRADE ATUALIZADA\n" + t
+    return t + f"\n\n🪙 Fichas no site {SITE}"
+
+def monta_legenda(nome, hora, info, idx):
+    partes = []
+    if info.get("gtd"): partes.append(f"💰 {info['gtd']} GTD")
+    if info.get("buyin"): partes.append(f"🎟️ Buy-in {info['buyin']}")
+    if info.get("late"): partes.append(f"⏳ Late {info['late']} min")
+    linha = " · ".join(partes) if partes else "Garanta sua vaga!"
+    txt = MODELOS[idx % len(MODELOS)].format(nome=nome.upper(), hora=hora, linha=linha)
+    if nome.upper() in PKO: txt += "\n🎯 Bounty: cada eliminação vale prêmio!"
+    return txt + f"\n\n🪙 Fichas no site {SITE}"
 
 # ---------- rodapé: Union Prime à esquerda + logo North à direita ----------
 def aplica_logo(img):
@@ -150,7 +236,8 @@ def main(now=None, drive=None):
         if k in st: continue
         antes = any(x.startswith(f"grade-{hoje_s}-") for x in st)
         png = drive.download(f["id"])
-        if tg_img(png, ("🔄 GRADE ATUALIZADA " if antes else "📅 GRADE ") + hoje.strftime("%d/%m")): st[k] = {"dia": hoje_s}
+        rot = st.get("_rot", {"dia": hoje_s, "n": 0}); idx = rot["n"]
+        if tg_img(png, legenda_grade(hoje, idx, antes)): st[k] = {"dia": hoje_s}; st["_rot"] = {"dia": hoje_s, "n": idx + 1}
     if not achou and now.hour >= PRAZO_GRADE_H:
         k = "grade-atrasada-" + hoje_s
         if k not in st: tg_msg(f"⏰ A grade de hoje ({hoje.strftime('%d/%m')}) ainda não foi atualizada no Drive."); st[k] = {"dia": hoje_s}
@@ -179,7 +266,11 @@ def main(now=None, drive=None):
         else:
             b = io.BytesIO(); out.save(b, "PNG", optimize=True); buf = b.getvalue()
         nome = os.path.splitext(f["name"])[0]
-        if tg_img(buf, f"🃏 {nome} começa às {h:02d}:{mi:02d}"): st[k] = {"dia": hoje_s}
+        try: info = le_info(img)
+        except Exception: info = {}
+        rot = st.get("_rot", {"dia": hoje_s, "n": 0}); idx = rot["n"]
+        leg = monta_legenda(nome, f"{h:02d}:{mi:02d}", info, idx)
+        if tg_img(buf, leg): st[k] = {"dia": hoje_s}; st["_rot"] = {"dia": hoje_s, "n": idx + 1}
     save_state(st)
 
 if __name__ == "__main__":
