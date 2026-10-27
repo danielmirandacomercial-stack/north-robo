@@ -96,11 +96,30 @@ def _hora(t):
 
 def le_data_hora(img):
     W, H = img.size
-    gray = img.convert("L"); top = np.array(gray.crop((0, 0, W, int(H * 0.22))))
-    cols = np.where((top > 170).sum(axis=0) > 0)[0]; rows = np.where((top > 170).sum(axis=1) > 0)[0]
-    if len(cols) < 50 or len(rows) < 5: return None
-    x0, x1, y0, y1 = cols.min(), cols.max(), rows.min(), rows.max()
-    line = gray.crop((max(0, x0 - 5), max(0, y0 - 5), min(W, x1 + 5), min(int(H * 0.22), y1 + 5)))
+    gray = img.convert("L")
+    # procura a linha de data: maior bloco de texto claro na faixa central do topo (ignora curvas finas)
+    cx0, cx1, cy1 = int(W * 0.22), int(W * 0.78), int(H * 0.22)
+    ok = np.array(gray.crop((cx0, 0, cx1, cy1))) > 200
+    rows = np.where(ok.sum(axis=1) > 3)[0]
+    if len(rows) < 5: return None
+    blocks, st, prev = [], rows[0], rows[0]
+    for r in rows[1:]:
+        if r - prev > 6: blocks.append((st, prev)); st = r
+        prev = r
+    blocks.append((st, prev))
+    fortes = [b for b in blocks if ok[b[0]:b[1] + 1].sum() >= 400]
+    if not fortes: return None
+    y0, y1 = fortes[0]          # a linha de data é o primeiro texto de verdade (curvas finas ficam abaixo de 400 px)
+    colsum = ok[y0:y1 + 1].sum(axis=0); cols = np.where(colsum > 0)[0]
+    groups, st, prev = [], cols[0], cols[0]
+    for c in cols[1:]:
+        if c - prev > 40: groups.append((st, prev)); st = c
+        prev = c
+    groups.append((st, prev))
+    gx0, gx1 = max(groups, key=lambda g: colsum[g[0]:g[1] + 1].sum())
+    if gx1 - gx0 < 50: return None
+    x0, x1 = gx0 + cx0, gx1 + cx0
+    line = gray.crop((max(0, x0 - 5), max(0, y0 - 5), min(W, x1 + 5), min(cy1, y1 + 5)))
     w = line.width
     # data: parte da esquerda da linha
     dm = None
@@ -129,12 +148,19 @@ def _band(gray, a, b, sc, thr=False, cfg="--psm 6"):
 
 def le_info(img):
     g = img.convert("L"); info = {}
-    t = _band(g, .63, .74, 2)
-    m = re.search(r"BUY\W*IN\s*(\d+)", t, re.I); info["buyin"] = m.group(1) if m else None
-    m = re.search(r"LATE\s*(\d+)", t, re.I); info["late"] = m.group(1) if m else None
+    info["buyin"] = info["late"] = None
+    for a, b, sc in ((.63, .74, 2), (.60, .72, 2), (.63, .74, 1), (.60, .72, 3), (.58, .76, 2)):
+        t = _band(g, a, b, sc)
+        if not info["buyin"]:
+            m = re.search(r"BU\w{0,2}\W*IN\s*(\d+)", t, re.I) or re.search(r"(\d+)\s*LATE", t, re.I)
+            if m: info["buyin"] = m.group(1)
+        if not info["late"]:
+            m = re.search(r"LATE\s*(\d+)", t, re.I)
+            if m: info["late"] = m.group(1)
+        if info["buyin"] and info["late"]: break
     info["gtd"] = None
-    for a, b, sc in ((.34, .64, .5), (.38, .60, .75), (.34, .64, .75)):
-        t = _band(g, a, b, sc, thr=True)
+    for a, b, sc, thr in ((.34, .64, .5, True), (.38, .60, .75, True), (.34, .64, .75, True), (.35, .56, .75, False), (.35, .56, 1, False)):
+        t = _band(g, a, b, sc, thr=thr)
         m = re.search(r"(\d+)\s*(K?)\s*G\w{0,2}D", t)
         if m and (m.group(1) != "1" or m.group(2)): info["gtd"] = (m.group(1) + m.group(2)).upper(); break
         if re.search(r"[TI1lA~|]\s*K\s*G\w{0,2}D", t): info["gtd"] = "1K"; break
@@ -177,29 +203,30 @@ def monta_legenda(nome, hora, info, idx):
 # ---------- rodapé: Union Prime à esquerda + logo North à direita ----------
 def aplica_logo(img):
     img = img.convert("RGB"); W, H = img.size; A = np.array(img).astype(float)
-    fx = lambda v: int(v / 1336 * W); fy = lambda v: int(v / 1655 * H)
-    lx0, lx1, ly0, ly1 = fx(455), fx(885), fy(1352), fy(1505)
+    lx0, lx1, ly0, ly1 = int(W * .32), int(W * .68), int(H * .815), int(H * .945)
     crop = A[ly0:ly1, lx0:lx1]; lum = crop.max(axis=2)
     alpha = np.clip((lum - 95) / 60, 0, 1); ok = alpha > 0.6
     rr = np.where(ok.sum(axis=1) > 2)[0]; cc = np.where(ok.sum(axis=0) > 2)[0]
     if len(rr) < 20 or len(cc) < 50: return None   # não achou a logo Union: não mexe
     bx0, bx1, by0, by1 = cc.min(), cc.max(), rr.min(), rr.max()
     uni = Image.fromarray(np.dstack([crop, alpha * 255]).astype("uint8")[max(0, by0 - 3):by1 + 4, max(0, bx0 - 3):bx1 + 4], "RGBA")
-    x0, y0, x1, y1 = fx(440), fy(1340), fx(900), fy(1515)
-    top = gaussian_filter1d(A[y0 - 12:y0 - 2, x0:x1].mean(axis=0), 12, axis=0)
-    bot = gaussian_filter1d(A[y1 + 2:y1 + 12, x0:x1].mean(axis=0), 12, axis=0)
+    # apaga exatamente onde a logo estava (caixa detectada + margem)
+    m_ = 16
+    x0, x1 = max(0, lx0 + bx0 - m_), min(W, lx0 + bx1 + m_); y0, y1 = max(14, ly0 + by0 - m_), min(H - 14, ly0 + by1 + m_)
+    top = gaussian_filter1d(A[y0 - 10:y0 - 2, x0:x1].mean(axis=0), 10, axis=0)
+    bot = gaussian_filter1d(A[y1 + 2:y1 + 10, x0:x1].mean(axis=0), 10, axis=0)
     t = np.linspace(0, 1, y1 - y0)[:, None, None]
     fill = top[None] * (1 - t) + bot[None] * t
-    sig = A[y0 - 40:y0 - 5, x0:x1].std(axis=(0, 1)).mean() * 0.6
-    fill = fill + np.random.default_rng(1).normal(0, sig, fill.shape)
+    ref = A[y1 + 2:y1 + 14, x0:x1]; mad = np.median(np.abs(ref - np.median(ref, axis=(0, 1)))) * 1.4826
+    fill = fill + np.random.default_rng(1).normal(0, min(mad, 6), fill.shape)
     full = A.copy(); full[y0:y1, x0:x1] = fill
-    m = np.zeros(A.shape[:2]); m[y0 + 8:y1 - 8, x0 + 8:x1 - 8] = 1
-    m = np.array(Image.fromarray((m * 255).astype("uint8")).filter(ImageFilter.GaussianBlur(5))) / 255
+    m = np.zeros(A.shape[:2]); m[y0 + 6:y1 - 6, x0 + 6:x1 - 6] = 1
+    m = np.array(Image.fromarray((m * 255).astype("uint8")).filter(ImageFilter.GaussianBlur(4))) / 255
     clean = Image.fromarray(np.clip(A * (1 - m[..., None]) + full * m[..., None], 0, 255).astype("uint8")).convert("RGBA")
     north = Image.open(os.path.join(HERE, "logo_north_branca.png")).convert("RGBA")
     uh = int(H * 140 / 1655); u = uni.resize((int(uni.width * uh / uni.height), uh), Image.LANCZOS)
     nh = int(H * 210 / 1655); n = north.resize((int(north.width * nh / north.height), nh), Image.LANCZOS)
-    gap = int(W * 70 / 1336); sx = (W - (u.width + gap + n.width)) // 2; cy = int(H * 1428 / 1655)
+    gap = int(W * 70 / 1336); sx = (W - (u.width + gap + n.width)) // 2; cy = ly0 + (by0 + by1) // 2
     clean.alpha_composite(u, (sx, cy - u.height // 2))
     lx = sx + u.width + gap // 2
     ImageDraw.Draw(clean).line((lx, cy - int(H * .036), lx, cy + int(H * .036)), fill=(200, 160, 70, 255), width=max(2, W // 650))
