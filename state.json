@@ -3,8 +3,8 @@
   "dia": "2026-10-27"
  },
  "_rot": {
-  "dia": "2026-10-29",
-  "n": 20
+  "dia": "2026-10-30",
+  "n": 21
  },
  "torneio-2026-10-27-16o-GyhTTnMYOCrUYGlPk7kr5YV1FHAk8": {
   "dia": "2026-10-27"
@@ -62,5 +62,8 @@
  },
  "torneio-2026-10-29-1JhIZNKdEvSegWphVU7bqEINU-zHuB1JD": {
   "dia": "2026-10-29"
+ },
+ "grade-2026-10-30-14MbbbHZ3OJJqdLHBeD4ZlB3SFXt75mcC-2026-10-30T12:59:45.606Z": {
+  "dia": "2026-10-30"
  }
 }
