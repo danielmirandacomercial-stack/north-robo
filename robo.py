@@ -306,12 +306,18 @@ def acha_union(img):
     W, H = img.size; k = 561 / W
     g = np.array(img.convert("L").resize((561, int(H * k)), Image.LANCZOS)).astype(float)
     y0 = int(g.shape[0] * .72); B = (g[y0:] > 150).astype(float)
-    t = (np.array(Image.open(io.BytesIO(__import__("base64").b64decode(UNION_TPL))).convert("L")) > 100).astype(float); th, tw = t.shape
-    if B.shape[0] < th or B.shape[1] < tw: return None
-    corr = fftconvolve(B, t[::-1, ::-1], mode="valid"); loc = fftconvolve(B, np.ones_like(t), mode="valid")
-    sc = corr / np.sqrt(t.sum() * np.maximum(loc, 1) + 1e-9)
-    iy, ix = np.unravel_index(sc.argmax(), sc.shape)
-    return int(ix / k), int((iy + y0) / k), int((ix + tw) / k), int((iy + y0 + th) / k), float(sc[iy, ix])
+    t0 = Image.open(io.BytesIO(__import__("base64").b64decode(UNION_TPL))).convert("L")
+    best = None
+    for esc in (.88, .96, 1.0, 1.06, 1.12, 1.2):          # a logo pode vir em tamanhos um pouco diferentes
+        t = (np.array(t0.resize((int(t0.width * esc), int(t0.height * esc)), Image.LANCZOS)) > 100).astype(float); th, tw = t.shape
+        if B.shape[0] < th or B.shape[1] < tw: continue
+        corr = fftconvolve(B, t[::-1, ::-1], mode="valid"); loc = fftconvolve(B, np.ones_like(t), mode="valid")
+        sc = corr / np.sqrt(t.sum() * np.maximum(loc, 1) + 1e-9)
+        iy, ix = np.unravel_index(sc.argmax(), sc.shape)
+        if best is None or sc[iy, ix] > best[0]: best = (float(sc[iy, ix]), ix, iy, tw, th)
+    if not best: return None
+    v, ix, iy, tw, th = best
+    return int(ix / k), int((iy + y0) / k), int((ix + tw) / k), int((iy + y0 + th) / k), v
 
 def aplica_logo(img):
     img = img.convert("RGB"); W, H = img.size; A = np.array(img).astype(float)
@@ -401,6 +407,11 @@ def main(now=None, drive=None):
         if k in st: continue
         antes = any(x.startswith(f"grade-{hoje_s}-") for x in st)
         png = drive.download(f["id"])
+        try:
+            out = aplica_logo(Image.open(io.BytesIO(png)))
+            if out is not None: b = io.BytesIO(); out.save(b, "PNG", optimize=True); png = b.getvalue()
+            else: tg_msg("⚠️ Não achei a logo Union na grade; enviando sem a logo North.")
+        except Exception as e: print("logo grade:", e, file=sys.stderr)
         rot = st.get("_rot", {"dia": hoje_s, "n": 0}); idx = rot["n"]
         if tg_img(png, legenda_grade(hoje, idx, antes)): st[k] = {"dia": hoje_s}; st["_rot"] = {"dia": hoje_s, "n": idx + 1}
     if not achou and now.hour >= PRAZO_GRADE_H:
