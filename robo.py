@@ -189,6 +189,50 @@ def classifica(img):
         return {"tipo": "grade", "dh": None, "nome": "", "wd": dia}
     return {"tipo": "outro", "dh": None, "nome": ""}
 
+# ---------- High Stakes: layouts variam por arte; data e nome vêm do nome da pasta ("DD.MM - NOME"), hora é lida na arte ----------
+def _hora_ok(h, mi): return h < 24 and mi < 60 and (h >= 10 or h <= 4)
+
+def hs_hora(img):
+    g = img.convert("L"); W, H = g.size; topo = g.crop((0, 0, W, int(H * .62)))
+    for inv in (False, True):
+        im = ImageOps.invert(ImageOps.autocontrast(topo)) if inv else topo
+        im = im.resize((im.width * 2, im.height * 2), Image.LANCZOS)
+        d = pytesseract.image_to_data(im, config="--psm 11", output_type=pytesseract.Output.DICT)
+        toks = [(d["text"][i].strip().upper().replace("O", "0").replace("S", "5"), d["top"][i] + d["height"][i] // 2)
+                for i in range(len(d["text"])) if d["text"][i].strip()]
+        tempos = [(int(m.group(1)), int(m.group(2)), y) for t, y in toks for m in [re.fullmatch(r"(\d{1,2})[H:](\d{2})", t)]
+                  if m and _hora_ok(int(m.group(1)), int(m.group(2)))]
+        datas = [y for t, y in toks if re.fullmatch(r"\d{1,2}/\d{2}", t)]
+        if tempos:   # o horário de início é o que está na linha da data (ou o mais alto da arte)
+            t = min(tempos, key=lambda t: abs(t[2] - datas[0])) if datas else min(tempos, key=lambda t: t[2])
+            return t[0], t[1]
+    # fallback: lado direito da linha da data, varrendo alturas
+    from collections import Counter
+    votos = Counter()
+    for a in [x / 100 for x in range(5, 19)]:
+        for x0 in (.5, .55, .6):
+            c = g.crop((int(W * x0), int(H * a), int(W * .95), int(H * (a + .045))))
+            for sc in (3, 5):
+                im = ImageOps.expand(ImageOps.invert(ImageOps.autocontrast(c)).resize((c.width * sc, c.height * sc), Image.LANCZOS), 30, fill=255)
+                hm = _hora(pytesseract.image_to_string(im, config="--psm 7 -c tessedit_char_whitelist=0123456789:HhxX").strip())
+                if hm and hm[1] % 5 == 0 and _hora_ok(*hm): votos[hm] += 1
+    return votos.most_common(1)[0][0] if votos else None
+
+def hs_torneios(drive, root, hoje):
+    """-> [(arquivo, nome)] das artes de feed de hoje em HIGH STAKES/TORNEIOS/<DD.MM - NOME>/ (ignora STORY e formato vertical)"""
+    out = []
+    for hsf in [f for f in drive.list(root) if is_folder(f) and "HIGH" in norm(f["name"])]:
+        tor = [f for f in drive.list(fid(hsf)) if is_folder(f) and "TORNEIO" in norm(f["name"]) and "GRADE" not in norm(f["name"])]
+        for t in tor:
+            for pf in [f for f in drive.list(fid(t)) if is_folder(f)]:
+                m = re.match(r"\s*(\d{1,2})\.(\d{1,2})\s*[-–]?\s*(.*)", pf["name"])
+                if not m or (int(m.group(1)), int(m.group(2))) != (hoje.day, hoje.month): continue
+                nome = re.sub(r"\s+", " ", norm(m.group(3))).strip()
+                for f in drive.list(fid(pf)):
+                    if is_folder(f) or not f["mimeType"].startswith("image/") or "STORY" in norm(f["name"]): continue
+                    out.append((f, nome))
+    return out
+
 # ---------- informações da arte (GTD, buy-in, late) e legenda ----------
 PKO = {"THE START", "THE LOW", "HIGH ROLLER", "HIGH ROLLER LIGHT", "MINI HIGH ROLLER", "HR LIGHT", "MINI HR", "HR"}   # editar se mudar
 SITE = "www.northpokeronline.com.br"
@@ -358,6 +402,32 @@ def main(now=None, drive=None):
         except Exception: info = {}
         rot = st.get("_rot", {"dia": hoje_s, "n": 0}); idx = rot["n"]
         leg = monta_legenda(nome, f"{h:02d}:{mi:02d}", info, idx)
+        if tg_img(buf, leg): st[k] = {"dia": hoje_s}; st["_rot"] = {"dia": hoje_s, "n": idx + 1}
+    # --- High Stakes (série): pasta com a data do dia; hora lida na arte ---
+    try: hs = hs_torneios(drive, os.environ["DRIVE_FOLDER_ID"], hoje)
+    except AuthError: raise
+    except Exception as e: print("HS erro:", e, file=sys.stderr); hs = []
+    for f, nome in hs:
+        k = f"hs-{hoje_s}-{f['id']}"
+        if k in st: continue
+        kc = f"hshora-{f['id']}-{f['modifiedTime']}"
+        if kc not in st:
+            png = drive.download(f["id"]); img = Image.open(io.BytesIO(png))
+            if img.height / img.width > 1.5: st[kc] = {"dia": hoje_s, "skip": True}; continue     # formato story
+            hm = hs_hora(img)
+            if not hm:
+                k2 = "ocr-falha-" + hoje_s + f["id"]
+                if k2 not in st: tg_msg(f"⚠️ High Stakes: não consegui ler o horário da arte {f['name']}."); st[k2] = {"dia": hoje_s}
+                continue
+            st[kc] = {"dia": hoje_s, "h": hm[0], "mi": hm[1]}
+        c = st[kc]
+        if c.get("skip"): continue
+        h, mi = c["h"], c["mi"]
+        inicio = dt.datetime.combine(hoje, dt.time(h, mi), TZ)
+        if not (inicio - dt.timedelta(minutes=ANTECEDENCIA_MIN) <= now <= inicio + dt.timedelta(minutes=JANELA_APOS_MIN)): continue
+        buf = drive.download(f["id"])      # High Stakes: layouts variam muito, envia a arte original (sem mexer na logo)
+        rot = st.get("_rot", {"dia": hoje_s, "n": 0}); idx = rot["n"]
+        leg = "⭐ HIGH STAKES\n" + monta_legenda(nome, f"{h:02d}:{mi:02d}", {}, idx)
         if tg_img(buf, leg): st[k] = {"dia": hoje_s}; st["_rot"] = {"dia": hoje_s, "n": idx + 1}
     save_state(st)
 
