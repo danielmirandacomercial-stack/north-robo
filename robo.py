@@ -298,18 +298,42 @@ def monta_legenda(nome, hora, info, idx):
     return txt + f"\n\n🪙 Fichas no site {SITE}"
 
 # ---------- rodapé: Union Prime à esquerda + logo North à direita ----------
+UNION_TPL = "iVBORw0KGgoAAAANSUhEUgAAAK4AAABBCAAAAABtdcBlAAACUklEQVR42u1a7Y7DIAyLI97/lX0/2rWBFUiB62Aa0mnarR8mBMdOC1liUEQEIroGXOyYIasMigjWgSuUZZLhlRALwV0ocS1B/MZv/MZvfN2gCCdlOM1xMReBy5kriObrHBeAy7krtK6lIbSElnPDZWQvMCFejdDGXgiYDm8oqvXp9Htoc6S7i6aYL4ex5jFVe2y0HWB2xmnK4xPFLi6yVa3Vkeyfr/rNUpG0RZ707/HAZNl5zoeVzCAet1YB9N0Lt3MlNxv7a/nI9xurszOCOYx0EJFMgOFd9kpSEP8qID9t79kJl5UupieJ8LDEYVvkXeyB0jVJw3o6onPFW6uz3R4n/6K6i3kTbp93w7D81ae8amEG9M83eOPTHN4rmkQ+k7bDwVyZeLztCqCS3F1Exk0KT9FKVvczoumdsKEENpUADJcWwUkoMd2zvLM4Ema0uuqkP3zWENEDl8ZkunOgVyWgdK5mF/ak2pR4cPwT9uq4ylhU54XoHHMRxPz8AgVj/XgiRWL9sIATxmT9HIiNHSXy3lHMZ4kuUdal92mJiYK50jNohQuPW7vJkbnZc1RVY79RY/UxAXvZO9RsCt2Xp/MI9DMDcs0JNuuubUske7l3wwap4N0k9P3gcif0Cwm6kzpyztKTu4jvCLiKYkvhZ/J3ZwX1EekCJJMG2ohCrxNvrACLsQEHieDuq0s6zKAgHy2aVrXtR7NPM1z4XXRo6bcnimDSnman+cEw94iKjsUQr9bzHhxgcRkh/K6JBQn3dBvqKd841LVe2Qpf8lLcnNH9AwSLx5RuDwu8AAAAAElFTkSuQmCC"
+
+def acha_union(img):
+    """localiza a logo Union Prime por correlação com um modelo (funciona com fundos e posições variados) -> (x0,y0,x1,y1,score)"""
+    from scipy.signal import fftconvolve
+    W, H = img.size; k = 561 / W
+    g = np.array(img.convert("L").resize((561, int(H * k)), Image.LANCZOS)).astype(float)
+    y0 = int(g.shape[0] * .72); B = (g[y0:] > 150).astype(float)
+    t = (np.array(Image.open(io.BytesIO(__import__("base64").b64decode(UNION_TPL))).convert("L")) > 100).astype(float); th, tw = t.shape
+    if B.shape[0] < th or B.shape[1] < tw: return None
+    corr = fftconvolve(B, t[::-1, ::-1], mode="valid"); loc = fftconvolve(B, np.ones_like(t), mode="valid")
+    sc = corr / np.sqrt(t.sum() * np.maximum(loc, 1) + 1e-9)
+    iy, ix = np.unravel_index(sc.argmax(), sc.shape)
+    return int(ix / k), int((iy + y0) / k), int((ix + tw) / k), int((iy + y0 + th) / k), float(sc[iy, ix])
+
 def aplica_logo(img):
     img = img.convert("RGB"); W, H = img.size; A = np.array(img).astype(float)
-    lx0, lx1, ly0, ly1 = int(W * .32), int(W * .68), int(H * .815), int(H * .945)
-    crop = A[ly0:ly1, lx0:lx1]; lum = crop.max(axis=2)
-    alpha = np.clip((lum - 95) / 60, 0, 1); ok = alpha > 0.6
-    rr = np.where(ok.sum(axis=1) > 2)[0]; cc = np.where(ok.sum(axis=0) > 2)[0]
-    if len(rr) < 20 or len(cc) < 50: return None   # não achou a logo Union: não mexe
-    bx0, bx1, by0, by1 = cc.min(), cc.max(), rr.min(), rr.max()
-    uni = Image.fromarray(np.dstack([crop, alpha * 255]).astype("uint8")[max(0, by0 - 3):by1 + 4, max(0, bx0 - 3):bx1 + 4], "RGBA")
+    m_ = acha_union(img)
+    if m_ and m_[4] >= .4:
+        bx0, by0, bx1, by1 = m_[:4]; lx0 = ly0 = 0
+        crop = A[by0:by1, bx0:bx1]; lum = crop.max(axis=2)
+        alpha = np.clip((lum - 95) / 60, 0, 1)
+        uni = Image.fromarray(np.dstack([crop, alpha * 255]).astype("uint8"), "RGBA")
+        ocx = (bx0 + bx1) // 2
+    else:   # método antigo (posição fixa no rodapé)
+        lx0, lx1, ly0, ly1 = int(W * .32), int(W * .68), int(H * .815), int(H * .945)
+        crop = A[ly0:ly1, lx0:lx1]; lum = crop.max(axis=2)
+        alpha = np.clip((lum - 95) / 60, 0, 1); ok = alpha > 0.6
+        rr = np.where(ok.sum(axis=1) > 2)[0]; cc = np.where(ok.sum(axis=0) > 2)[0]
+        if len(rr) < 20 or len(cc) < 50: return None   # não achou a logo Union: não mexe
+        bx0, bx1, by0, by1 = cc.min(), cc.max(), rr.min(), rr.max()
+        uni = Image.fromarray(np.dstack([crop, alpha * 255]).astype("uint8")[max(0, by0 - 3):by1 + 4, max(0, bx0 - 3):bx1 + 4], "RGBA")
+        bx0, bx1, by0, by1 = lx0 + bx0, lx0 + bx1, ly0 + by0, ly0 + by1; ocx = W // 2
     # apaga exatamente onde a logo estava (caixa detectada + margem)
     m_ = 16
-    x0, x1 = max(0, lx0 + bx0 - m_), min(W, lx0 + bx1 + m_); y0, y1 = max(14, ly0 + by0 - m_), min(H - 14, ly0 + by1 + m_)
+    x0, x1 = max(0, bx0 - m_), min(W, bx1 + m_); y0, y1 = max(14, by0 - m_), min(H - 14, by1 + m_)
     top = gaussian_filter1d(A[y0 - 10:y0 - 2, x0:x1].mean(axis=0), 10, axis=0)
     bot = gaussian_filter1d(A[y1 + 2:y1 + 10, x0:x1].mean(axis=0), 10, axis=0)
     t = np.linspace(0, 1, y1 - y0)[:, None, None]
@@ -323,7 +347,8 @@ def aplica_logo(img):
     north = Image.open(os.path.join(HERE, "logo_north_branca.png")).convert("RGBA")
     uh = int(H * 140 / 1655); u = uni.resize((int(uni.width * uh / uni.height), uh), Image.LANCZOS)
     nh = int(H * 210 / 1655); n = north.resize((int(north.width * nh / north.height), nh), Image.LANCZOS)
-    gap = int(W * 70 / 1336); sx = (W - (u.width + gap + n.width)) // 2; cy = ly0 + (by0 + by1) // 2
+    gap = int(W * 70 / 1336); tot = u.width + gap + n.width
+    sx = min(max(ocx - tot // 2, 20), W - 20 - tot); cy = (by0 + by1) // 2
     clean.alpha_composite(u, (sx, cy - u.height // 2))
     lx = sx + u.width + gap // 2
     ImageDraw.Draw(clean).line((lx, cy - int(H * .036), lx, cy + int(H * .036)), fill=(200, 160, 70, 255), width=max(2, W // 650))
@@ -425,7 +450,11 @@ def main(now=None, drive=None):
         h, mi = c["h"], c["mi"]
         inicio = dt.datetime.combine(hoje, dt.time(h, mi), TZ)
         if not (inicio - dt.timedelta(minutes=ANTECEDENCIA_MIN) <= now <= inicio + dt.timedelta(minutes=JANELA_APOS_MIN)): continue
-        buf = drive.download(f["id"])      # High Stakes: layouts variam muito, envia a arte original (sem mexer na logo)
+        png = drive.download(f["id"]); img = Image.open(io.BytesIO(png)); out = aplica_logo(img)
+        if out is None:
+            tg_msg(f"⚠️ Não achei a logo Union na arte {f['name']}; enviando sem a logo North."); buf = png
+        else:
+            b = io.BytesIO(); out.save(b, "PNG", optimize=True); buf = b.getvalue()
         rot = st.get("_rot", {"dia": hoje_s, "n": 0}); idx = rot["n"]
         leg = "⭐ HIGH STAKES\n" + monta_legenda(nome, f"{h:02d}:{mi:02d}", {}, idx)
         if tg_img(buf, leg): st[k] = {"dia": hoje_s}; st["_rot"] = {"dia": hoje_s, "n": idx + 1}
