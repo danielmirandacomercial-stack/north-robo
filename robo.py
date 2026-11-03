@@ -53,12 +53,27 @@ def is_folder(f):
 def fid(f):
     return f.get("shortcutDetails", {}).get("targetId", f["id"])
 
+MESES = ["JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"]
+
+def acha_dia(drive, pasta, dia, mes, nivel=0):
+    """procura a pasta do dia ('02. TERÇA-FEIRA', 'TERÇA'...) descendo até 3 níveis; prefere a pasta do mês atual."""
+    subs = [f for f in drive.list(pasta) if is_folder(f)]
+    ach = [f for f in subs if dia in norm(f["name"]) and "HIGH" not in norm(f["name"]) and "STORY" not in norm(f["name"])]
+    if ach: return fid(ach[0])
+    if nivel >= 3: return None
+    subs = [f for f in subs if "STORY" not in norm(f["name"])]
+    subs.sort(key=lambda f: (0 if mes in norm(f["name"]) else 1, 0 if "TODOS" in norm(f["name"]) else 1))
+    for f in subs:
+        r = acha_dia(drive, fid(f), dia, mes, nivel + 1)
+        if r: return r
+    return None
+
 def pasta_feed(drive, root, hoje):
-    """root/<DIA>/ (subpasta com 'FEED' no nome, se existir)"""
+    """pasta do dia (em qualquer nível abaixo de root) -> subpasta FEED (ignora STORY)"""
     dia = DIAS[hoje.weekday()]
-    dias = [f for f in drive.list(root) if is_folder(f) and norm(f["name"]) == dia]
-    if not dias: return None, f"pasta do dia ({dia}) não encontrada"
-    pasta = fid(dias[0]); itens = drive.list(pasta)
+    pasta = acha_dia(drive, root, dia, MESES[hoje.month - 1])
+    if not pasta: return None, f"pasta do dia ({dia}) não encontrada"
+    itens = drive.list(pasta)
     feed = [f for f in itens if is_folder(f) and "FEED" in norm(f["name"])]
     if feed: itens = drive.list(fid(feed[0]))
     return [f for f in itens if not is_folder(f) and f["mimeType"].startswith("image/")], None
@@ -136,8 +151,46 @@ def le_data_hora(img):
     if not (dm and hm): return None
     return dm[0], dm[1], hm[0], hm[1]
 
+# ---------- reconhecimento pela imagem (não depende do nome do arquivo) ----------
+def _txt(img, a, b, sc=2, thr=None, cfg="--psm 6", x0=0.0, x1=1.0):
+    g = img.convert("L"); W, H = g.size
+    c = g.crop((int(W * x0), int(H * a), int(W * x1), int(H * b)))
+    c = c.point(lambda v: 0 if v > thr else 255) if thr else ImageOps.invert(ImageOps.autocontrast(c))
+    c = ImageOps.expand(c.resize((c.width * sc, c.height * sc), Image.LANCZOS), 30, fill=255)
+    return pytesseract.image_to_string(c, config=cfg).strip()
+
+def le_data_hora2(img):
+    """linha do topo: 'dd/mm • DIA • hh:mm'"""
+    for a, b in ((.08, .14), (.07, .15), (.06, .17), (.09, .13)):
+        for sc in (2, 3):
+            t = _txt(img, a, b, sc, cfg="--psm 7", x0=.2, x1=.8).upper().replace("O", "0")
+            dm = re.search(r"(\d{1,2})\s*/\s*(\d{1,2})", t)
+            hs = re.findall(r"(\d{1,2})\s*[:H.]\s*(\d{2})", t)
+            if dm and hs:
+                d, mo, h, mi = int(dm.group(1)), int(dm.group(2)), int(hs[-1][0]), int(hs[-1][1])
+                if 1 <= d <= 31 and 1 <= mo <= 12 and h < 24 and mi < 60: return d, mo, h, mi
+    return le_data_hora(img)      # método antigo (artes antigas)
+
+def classifica(img):
+    """-> dict(tipo='torneio'|'sat'|'grade'|'outro', dh=(d,m,h,mi)|None, nome=str, dia=indice do dia da semana|None)"""
+    dh = le_data_hora2(img)
+    if dh:
+        sat = any(w.startswith("SAT") for w in re.findall(r"[A-Z]+", norm(_txt(img, .22, .40, 2, thr=190))))
+        if not sat: sat = "VAGA" in norm(_txt(img, .38, .62))
+        toks = re.sub(r"[^A-Z0-9 ]", " ", norm(_txt(img, .25, .37, 2, thr=170, x0=.15, x1=.85))).split()
+        while toks and len(toks[0]) == 1: toks.pop(0)          # sobras dos traços decorativos
+        while toks and len(toks[-1]) == 1: toks.pop()
+        nome = " ".join(toks)
+        return {"tipo": "sat" if sat else "torneio", "dh": list(dh), "nome": nome}
+    t = norm(_txt(img, .12, .45))
+    if "HORARIO" in t or "EVENTO" in t:
+        w = norm(_txt(img, .07, .22))
+        dia = next((i for i, d in enumerate(DIAS) if d in w), None)
+        return {"tipo": "grade", "dh": None, "nome": "", "wd": dia}
+    return {"tipo": "outro", "dh": None, "nome": ""}
+
 # ---------- informações da arte (GTD, buy-in, late) e legenda ----------
-PKO = {"THE START", "THE LOW", "HIGH ROLLER", "HIGH ROLLER LIGHT", "MINI HIGH ROLLER"}   # editar se mudar
+PKO = {"THE START", "THE LOW", "HIGH ROLLER", "HIGH ROLLER LIGHT", "MINI HIGH ROLLER", "HR LIGHT", "MINI HR", "HR"}   # editar se mudar
 SITE = "www.northpokeronline.com.br"
 
 def _band(gray, a, b, sc, thr=False, cfg="--psm 6"):
@@ -252,12 +305,28 @@ def main(now=None, drive=None):
         if k not in st: tg_msg("⚠️ North Robô: " + erro); st[k] = {"dia": hoje_s}
         save_state(st); return
     corte_grade = dt.datetime.combine(hoje, dt.time(0), TZ) - dt.timedelta(hours=PRAZO_GRADE_H)
-    # --- grade ---
-    grades = [f for f in files if "GRADE" in norm(f["name"])]
-    achou = False
-    for f in grades:
+    # --- classifica cada arte pela imagem (resultado guardado: cada arte é lida uma vez) ---
+    arts = []
+    for f in sorted(files, key=lambda x: x["modifiedTime"]):
         mod = dt.datetime.fromisoformat(f["modifiedTime"].replace("Z", "+00:00")).astimezone(TZ)
-        if mod < corte_grade: continue
+        if mod < corte_grade - dt.timedelta(days=3): continue          # claramente antiga
+        kc = f"cls-{f['id']}-{f['modifiedTime']}"
+        if kc in st: c = st[kc]
+        else:
+            try: png = drive.download(f["id"]); c = classifica(Image.open(io.BytesIO(png)))
+            except Exception as e:
+                print("falha ao ler", f["name"], e, file=sys.stderr); continue
+            if c["tipo"] == "outro":
+                k2 = "ocr-falha-" + hoje_s + f["id"]
+                if k2 not in st: tg_msg(f"⚠️ Não consegui identificar a arte {f['name']} (nem grade, nem torneio)."); st[k2] = {"dia": hoje_s}
+            st[kc] = {**c, "dia": hoje_s}
+        arts.append((f, mod, st[kc]))
+    # --- grade ---
+    achou = False
+    for f, mod, c in arts:
+        if c["tipo"] != "grade": continue
+        if c.get("wd") is not None and c["wd"] != hoje.weekday(): continue   # grade de outro dia (lida na imagem)
+        if c.get("wd") is None and mod < corte_grade: continue            # sem dia legível: vale a data de modificação
         achou = True
         k = f"grade-{hoje_s}-{f['id']}-{f['modifiedTime']}"
         if k in st: continue
@@ -268,31 +337,23 @@ def main(now=None, drive=None):
     if not achou and now.hour >= PRAZO_GRADE_H:
         k = "grade-atrasada-" + hoje_s
         if k not in st: tg_msg(f"⏰ A grade de hoje ({hoje.strftime('%d/%m')}) ainda não foi atualizada no Drive."); st[k] = {"dia": hoje_s}
-    # --- torneios ---
-    for f in files:
-        n = norm(f["name"])
-        if "GRADE" in n or n.startswith("SAT"): continue
+    # --- torneios (satélites não são enviados) ---
+    for f, mod, c in arts:
+        if c["tipo"] != "torneio": continue
         k = f"torneio-{hoje_s}-{f['id']}"
         if k in st: continue
-        mod = dt.datetime.fromisoformat(f["modifiedTime"].replace("Z", "+00:00")).astimezone(TZ)
-        if mod < corte_grade - dt.timedelta(days=3): continue          # claramente antigo, nem baixa
-        png = drive.download(f["id"]); img = Image.open(io.BytesIO(png))
-        dh = le_data_hora(img)
-        if not dh: 
-            k2 = "ocr-falha-" + hoje_s + f["id"]
-            if k2 not in st: tg_msg(f"⚠️ Não consegui ler data/hora da arte {f['name']}."); st[k2] = {"dia": hoje_s}
-            continue
-        d, mo, h, mi = dh
+        d, mo, h, mi = c["dh"]
         if (d, mo) != (hoje.day, hoje.month): continue                 # arte de outro dia
         inicio = dt.datetime.combine(hoje, dt.time(h, mi), TZ)
         if not (inicio - dt.timedelta(minutes=ANTECEDENCIA_MIN) <= now <= inicio + dt.timedelta(minutes=JANELA_APOS_MIN)): continue
+        png = drive.download(f["id"]); img = Image.open(io.BytesIO(png))
         out = aplica_logo(img)
         if out is None:
-            tg_msg(f"⚠️ Não achei a logo Union na arte {f['name']}; enviando sem a logo North.")
+            tg_msg(f"⚠️ Não achei a logo Union na arte {c['nome'] or f['name']}; enviando sem a logo North.")
             buf = png
         else:
             b = io.BytesIO(); out.save(b, "PNG", optimize=True); buf = b.getvalue()
-        nome = os.path.splitext(f["name"])[0]
+        nome = c["nome"] or os.path.splitext(f["name"])[0]
         try: info = le_info(img)
         except Exception: info = {}
         rot = st.get("_rot", {"dia": hoje_s, "n": 0}); idx = rot["n"]
