@@ -1,7 +1,7 @@
 {
  "_rot": {
-  "dia": "2026-11-01",
-  "n": 34
+  "dia": "2026-11-03",
+  "n": 36
  },
  "grade-2026-10-31-19b1xiHGLxJQmQEG-J5wf-4Y0p-2e5_jf-2026-10-31T12:55:05.757Z": {
   "dia": "2026-10-31"
@@ -50,5 +50,221 @@
  },
  "grade-atrasada-2026-11-03": {
   "dia": "2026-11-03"
+ },
+ "cls-16Wjr77kq0DHrtyJGCz9vz8aKrpojF2wN-2026-11-03T11:42:45.973Z": {
+  "tipo": "grade",
+  "dh": null,
+  "nome": "",
+  "wd": 1,
+  "dia": "2026-11-03"
+ },
+ "cls-1Lla5xrP6R4tzHQWvMwoitm6KTtdEcStI-2026-11-03T11:42:50.314Z": {
+  "tipo": "torneio",
+  "dh": [
+   3,
+   11,
+   15,
+   5
+  ],
+  "nome": "THE START",
+  "dia": "2026-11-03"
+ },
+ "cls-1U-n9UfVqA-qXfbbsQ-Dgvoazq3lgjQS9-2026-11-03T11:42:54.829Z": {
+  "tipo": "torneio",
+  "dh": [
+   3,
+   11,
+   20,
+   5
+  ],
+  "nome": "HK LISNNL",
+  "dia": "2026-11-03"
+ },
+ "cls-1MU7rMMCl8D7n9ogDNhtZEbasfkN15ByU-2026-11-03T11:42:59.258Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   11,
+   17,
+   5
+  ],
+  "nome": "MINI HR 2K",
+  "dia": "2026-11-03"
+ },
+ "cls-1ONWho71apidCu5M33uPQhzAg9qqLiBkp-2026-11-03T11:43:03.984Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   11,
+   17,
+   5
+  ],
+  "nome": "MINI HR 2K",
+  "dia": "2026-11-03"
+ },
+ "cls-1cUetQ0wkCt4KXpR0Sf_vuRYUzF8QBR4d-2026-11-03T11:43:08.891Z": {
+  "tipo": "torneio",
+  "dh": [
+   3,
+   11,
+   20,
+   5
+  ],
+  "nome": "MINI AK",
+  "dia": "2026-11-03"
+ },
+ "cls-1PWr18AES611vyVHc5VIrQAbpZFyyJAeo-2026-11-03T11:43:14.722Z": {
+  "tipo": "torneio",
+  "dh": [
+   3,
+   11,
+   17,
+   0
+  ],
+  "nome": "90 CLASSIC",
+  "dia": "2026-11-03"
+ },
+ "cls-1adg4Id0TrtecNZrmvWF4_s70oC2a2fDe-2026-11-03T11:43:20.047Z": {
+  "tipo": "torneio",
+  "dh": [
+   3,
+   11,
+   19,
+   0
+  ],
+  "nome": "NIGHT MYSTERY",
+  "dia": "2026-11-03"
+ },
+ "cls-1FAjMUhibDXoi4hjNkpOxvBtbrV1MvDdk-2026-11-03T11:43:24.145Z": {
+  "tipo": "torneio",
+  "dh": [
+   3,
+   11,
+   21,
+   5
+  ],
+  "nome": "THE LOW",
+  "dia": "2026-11-03"
+ },
+ "cls-1SNTJmXpviCvmBWEr9loVlr2gr7pp7JvC-2026-11-03T11:43:32.046Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   11,
+   16,
+   30
+  ],
+  "nome": "THE NIGHT MVSTERV 9K",
+  "dia": "2026-11-03"
+ },
+ "cls-1fMVHD-K8fjpFgNQ6ceN8E2kpFOLakvGV-2026-11-03T11:43:37.436Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   11,
+   17,
+   5
+  ],
+  "nome": "HR LIGHT 4K",
+  "dia": "2026-11-03"
+ },
+ "cls-1BCc1Izn7tC0OJIfgagGez6kUr1BCf7Ny-2026-11-03T11:43:41.025Z": {
+  "tipo": "torneio",
+  "dh": [
+   3,
+   11,
+   18,
+   5
+  ],
+  "nome": "THE LOW",
+  "dia": "2026-11-03"
+ },
+ "cls-1aIGB4aIin2xtub6_nOPKTnA4fMAcPfXW-2026-11-03T11:43:46.240Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   11,
+   18,
+   5
+  ],
+  "nome": "THE LOW 750",
+  "dia": "2026-11-03"
+ },
+ "cls-1ETRT3DMRog8iNWmOtFeuIZT6XN-Jt-Fy-2026-11-03T11:44:00.058Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   11,
+   18,
+   5
+  ],
+  "nome": "THE LOW 750",
+  "dia": "2026-11-03"
+ },
+ "cls-1ZU2Cs87Oh1ioZ7uc_Y55Ae2KaNGu-FCv-2026-11-03T11:44:04.645Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   11,
+   17,
+   0
+  ],
+  "nome": "IK DO JOJO",
+  "dia": "2026-11-03"
+ },
+ "cls-1c3F1inwKbNBSzpb4tscZEQD0wT3GjY4a-2026-11-03T11:44:09.070Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   11,
+   15,
+   0
+  ],
+  "nome": "IK DO JOJO",
+  "dia": "2026-11-03"
+ },
+ "cls-1OmklW0SwGCo-FsW_6aU1VsUxRismBGQT-2026-11-03T11:44:13.585Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   11,
+   14,
+   30
+  ],
+  "nome": "90 CLASSIC 1K",
+  "dia": "2026-11-03"
+ },
+ "cls-1Yk5RVVKk22tsh4fotQ3BN65vm1cbK7xZ-2026-11-03T11:44:18.204Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   11,
+   12,
+   30
+  ],
+  "nome": "THE START 500",
+  "dia": "2026-11-03"
+ },
+ "cls-1A5msMVd-AkDHYrwMrexgJ84l1w04MyD3-2026-11-03T11:44:33.889Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   11,
+   20,
+   30
+  ],
+  "nome": "3K SUPER",
+  "dia": "2026-11-03"
+ },
+ "grade-2026-11-03-16Wjr77kq0DHrtyJGCz9vz8aKrpojF2wN-2026-11-03T11:42:45.973Z": {
+  "dia": "2026-11-03"
+ },
+ "torneio-2026-11-03-1adg4Id0TrtecNZrmvWF4_s70oC2a2fDe": {
+  "dia": "2026-11-03"
+ },
+ "hshora-11_a7_z5cuJWRSqIZDC38_Ld1qHWPq1bm-2026-11-03T13:45:38.386Z": {
+  "dia": "2026-11-03",
+  "h": 19,
+  "mi": 5
  }
 }
