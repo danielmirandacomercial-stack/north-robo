@@ -1,7 +1,7 @@
 {
  "_rot": {
   "dia": "2026-11-04",
-  "n": 42
+  "n": 43
  },
  "grade-2026-11-01-16V6fdBiKa2m-a3plgBzezZEN8nTH4TEw-2026-11-01T13:39:14.090Z": {
   "dia": "2026-11-01"
@@ -418,6 +418,9 @@
   "dia": "2026-11-04"
  },
  "torneio-2026-11-04-1HXto_CrlHKu2SkPxVppnjmZ1LH8lAsvo": {
+  "dia": "2026-11-04"
+ },
+ "torneio-2026-11-04-1WA27cia2q8_5Tn2MNbQ_OhaVkW5eoFFJ": {
   "dia": "2026-11-04"
  }
 }
