@@ -1,7 +1,7 @@
 {
  "_rot": {
-  "dia": "2026-11-04",
-  "n": 47
+  "dia": "2026-11-05",
+  "n": 48
  },
  "grade-atrasada-2026-11-02": {
   "dia": "2026-11-02"
@@ -424,5 +424,279 @@
   "dia": "2026-11-05",
   "h": 19,
   "mi": 5
+ },
+ "cls-1a7W775Z26KfwH2BdwRopzn6prMDeaJzE-2026-11-05T11:07:05.561Z": {
+  "tipo": "grade",
+  "dh": null,
+  "nome": "",
+  "wd": 3,
+  "dia": "2026-11-05"
+ },
+ "cls-19kncGjuaQlj4XxTQi_z2WuIBXSvQrcZD-2026-11-05T11:08:36.830Z": {
+  "tipo": "torneio",
+  "dh": [
+   5,
+   11,
+   19,
+   0
+  ],
+  "nome": "THE NIGHT",
+  "dia": "2026-11-05"
+ },
+ "cls-1OUAiT1u3WeLlYAJ8urUxjeaWeUKY5NyM-2026-11-05T11:08:39.440Z": {
+  "tipo": "torneio",
+  "dh": [
+   5,
+   11,
+   20,
+   5
+  ],
+  "nome": "MINI HR",
+  "dia": "2026-11-05"
+ },
+ "cls-11BhE6P8VHs3s6ul1afC6_1AxVEoP3PM_-2026-11-05T11:08:42.204Z": {
+  "tipo": "torneio",
+  "dh": [
+   5,
+   11,
+   17,
+   0
+  ],
+  "nome": "00 CLASSIC",
+  "dia": "2026-11-05"
+ },
+ "cls-17WNgx_hR_56FajfKzRlOer8aur_UXPZd-2026-11-05T11:08:44.896Z": {
+  "tipo": "torneio",
+  "dh": [
+   5,
+   11,
+   17,
+   0
+  ],
+  "nome": "00 CLASSIC",
+  "dia": "2026-11-05"
+ },
+ "cls-1pQa_2nmtGRTUG9qU5iFbWuH_DUl-QHjo-2026-11-05T11:08:47.667Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   17,
+   5
+  ],
+  "nome": "SD LENLE MINI HIGH ROLLEI",
+  "dia": "2026-11-05"
+ },
+ "cls-1m4WgQY5-0KEhwCxJFE5ZAP4RjTacm6Yt-2026-11-05T11:08:50.175Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   17,
+   5
+  ],
+  "nome": "SD LENLE MINI HIGH ROLLEI",
+  "dia": "2026-11-05"
+ },
+ "cls-1E9xny5uGPCRSfJT25-sH4dZq4mk6DcvD-2026-11-05T11:08:52.941Z": {
+  "tipo": "torneio",
+  "dh": [
+   5,
+   11,
+   21,
+   5
+  ],
+  "nome": "NIGHTLY RAWOTMNWY",
+  "dia": "2026-11-05"
+ },
+ "cls-1FOR-cl5IL0csdfnwrY50Wdk5xLZ4u48x-2026-11-05T11:08:55.445Z": {
+  "tipo": "torneio",
+  "dh": [
+   5,
+   11,
+   20,
+   5
+  ],
+  "nome": "HIGH ROLLER",
+  "dia": "2026-11-05"
+ },
+ "cls-1wWrGQgHNpvnzfg7Q_TpAoiuOSIMkVM7q-2026-11-05T11:08:58.221Z": {
+  "tipo": "torneio",
+  "dh": [
+   5,
+   11,
+   15,
+   5
+  ],
+  "nome": "THE START",
+  "dia": "2026-11-05"
+ },
+ "cls-1kALnen8ijxgYe4bduCHdkAyb8TV4QSbx-2026-11-05T11:09:00.793Z": {
+  "tipo": "torneio",
+  "dh": [
+   5,
+   11,
+   15,
+   5
+  ],
+  "nome": "THE START",
+  "dia": "2026-11-05"
+ },
+ "cls-13mENu28P55wSLMtktohn6TWS65s6qv3R-2026-11-05T11:09:25.356Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   18,
+   5
+  ],
+  "nome": "NIGHTLY",
+  "dia": "2026-11-05"
+ },
+ "cls-1RnDGFBum_q8EIODq2aoGtI3jtx8vtvc4-2026-11-05T11:09:34.863Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   18,
+   5
+  ],
+  "nome": "NIGHTLY",
+  "dia": "2026-11-05"
+ },
+ "cls-1IzSLvkAGOB5tT_yacGFe42Dnp9qcQH9D-2026-11-05T11:10:21.716Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   17,
+   0
+  ],
+  "nome": "SD LELILE DK SUPER",
+  "dia": "2026-11-05"
+ },
+ "cls-155YqrC0AGETwDzG22DkTt4reA__6_YmG-2026-11-05T11:10:27.033Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   17,
+   0
+  ],
+  "nome": "SD LELILE DK SUPER",
+  "dia": "2026-11-05"
+ },
+ "cls-160gzCGjPTEQNv4fNnViHe7MD1Pmy4bV4-2026-11-05T11:10:33.746Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   16,
+   30
+  ],
+  "nome": "OD LEILE THE NIGHT JK",
+  "dia": "2026-11-05"
+ },
+ "cls-1anDO-DKJTJFDxDigxSODqizMmuF4Iimb-2026-11-05T11:10:39.978Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   16,
+   30
+  ],
+  "nome": "OD LEILE THE NIGHT JK",
+  "dia": "2026-11-05"
+ },
+ "cls-1uVKtJaNUmy12aYFeLOq0FpRC3RsOi2Uw-2026-11-05T11:10:47.553Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   17,
+   5
+  ],
+  "nome": "HIGH ROLLER 101",
+  "dia": "2026-11-05"
+ },
+ "cls-1dHj4tP7QsOS6mh-d1zIIiiHlWa5pBYdP-2026-11-05T11:10:53.133Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   17,
+   5
+  ],
+  "nome": "HIGH ROLLER 101",
+  "dia": "2026-11-05"
+ },
+ "cls-1APMUbrb2W8q0UWJvwsbf2cNxDJUPDI8r-2026-11-05T11:11:05.933Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   15,
+   0
+  ],
+  "nome": "OD LCIILE 3K SUPER",
+  "dia": "2026-11-05"
+ },
+ "cls-1u6oYs4LCNbYyt3SNXYwFcA9jb64awlYR-2026-11-05T11:11:31.256Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   15,
+   0
+  ],
+  "nome": "OD LCIILE 3K SUPER",
+  "dia": "2026-11-05"
+ },
+ "cls-1arGtOKP9eBNvkQtQLM4RBQeZKtoL3fxG-2026-11-05T11:11:36.498Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   14,
+   30
+  ],
+  "nome": "SD LENLE AW CT AGRIC TK",
+  "dia": "2026-11-05"
+ },
+ "cls-17Op2NkxdQx0A8r9agO83qem4SE6bktij-2026-11-05T11:11:41.057Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   14,
+   30
+  ],
+  "nome": "SD LENLE AW CT AGRIC TK",
+  "dia": "2026-11-05"
+ },
+ "cls-1iQT8j_flMyo3GAUChi6_ZYTQjhAsR8Yp-2026-11-05T11:11:49.218Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   12,
+   30
+  ],
+  "nome": "OD LEILE THE MTART AM",
+  "dia": "2026-11-05"
+ },
+ "cls-1b9MgSvZVzItIG0n1tlCLAkH47d4GrOjf-2026-11-05T11:11:55.676Z": {
+  "tipo": "sat",
+  "dh": [
+   5,
+   11,
+   12,
+   30
+  ],
+  "nome": "OD LEILE THE MTART AM",
+  "dia": "2026-11-05"
+ },
+ "grade-2026-11-05-1a7W775Z26KfwH2BdwRopzn6prMDeaJzE-2026-11-05T11:07:05.561Z": {
+  "dia": "2026-11-05"
  }
 }
