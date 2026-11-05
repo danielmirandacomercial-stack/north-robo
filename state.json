@@ -3,30 +3,6 @@
   "dia": "2026-11-04",
   "n": 47
  },
- "grade-2026-11-01-16V6fdBiKa2m-a3plgBzezZEN8nTH4TEw-2026-11-01T13:39:14.090Z": {
-  "dia": "2026-11-01"
- },
- "ocr-falha-2026-11-011AqLelarBfmlSPksu3sK_1hB3xB67nR4R": {
-  "dia": "2026-11-01"
- },
- "ocr-falha-2026-11-011DFsbKT-baRmsgJB_yVg-dY01KzTBhXHY": {
-  "dia": "2026-11-01"
- },
- "ocr-falha-2026-11-011dGoBJtUyjhYa4-YjKB6USz8_hr9NE5Rz": {
-  "dia": "2026-11-01"
- },
- "ocr-falha-2026-11-011ndoWUecffAhBEgqylt_L23wz522ujna-": {
-  "dia": "2026-11-01"
- },
- "ocr-falha-2026-11-011W4CItaPGsTS79KzD669ELKgVDiwE0_dU": {
-  "dia": "2026-11-01"
- },
- "ocr-falha-2026-11-011Fw7wNuVlg0430dHTF-3Lp9I7j4ivkdJa": {
-  "dia": "2026-11-01"
- },
- "ocr-falha-2026-11-0117UCcG7IUDa8TBTfAfQwaMh7gzInqnN7c": {
-  "dia": "2026-11-01"
- },
  "grade-atrasada-2026-11-02": {
   "dia": "2026-11-02"
  },
@@ -434,5 +410,19 @@
  },
  "torneio-2026-11-04-1aZyk-CAFH2HByNoKksfo0ob5k4n0MUX2": {
   "dia": "2026-11-04"
+ },
+ "ocr-falha-2026-11-051nySC5lA6s11eRgh_ySH8FWCT82H_FR_V": {
+  "dia": "2026-11-05"
+ },
+ "cls-1nySC5lA6s11eRgh_ySH8FWCT82H_FR_V-2026-11-04T14:42:00.822Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-05"
+ },
+ "hshora-1EaeCS9z2YdrGd-qr0JPaxmBB3DplY8fP-2026-11-03T13:48:46.845Z": {
+  "dia": "2026-11-05",
+  "h": 19,
+  "mi": 5
  }
 }
