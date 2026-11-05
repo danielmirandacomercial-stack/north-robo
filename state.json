@@ -1,7 +1,7 @@
 {
  "_rot": {
   "dia": "2026-11-05",
-  "n": 48
+  "n": 50
  },
  "grade-atrasada-2026-11-02": {
   "dia": "2026-11-02"
@@ -697,6 +697,12 @@
   "dia": "2026-11-05"
  },
  "grade-2026-11-05-1a7W775Z26KfwH2BdwRopzn6prMDeaJzE-2026-11-05T11:07:05.561Z": {
+  "dia": "2026-11-05"
+ },
+ "torneio-2026-11-05-1wWrGQgHNpvnzfg7Q_TpAoiuOSIMkVM7q": {
+  "dia": "2026-11-05"
+ },
+ "torneio-2026-11-05-1kALnen8ijxgYe4bduCHdkAyb8TV4QSbx": {
   "dia": "2026-11-05"
  }
 }
