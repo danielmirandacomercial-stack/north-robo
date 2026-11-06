@@ -1,7 +1,7 @@
 {
  "_rot": {
   "dia": "2026-11-06",
-  "n": 58
+  "n": 59
  },
  "grade-atrasada-2026-11-03": {
   "dia": "2026-11-03"
@@ -839,6 +839,25 @@
   "dia": "2026-11-06"
  },
  "grade-2026-11-06-1iZJDdJrNxXDSW0jH5IHvZ6l1MljKxeVZ-2026-11-05T13:15:31.674Z": {
+  "dia": "2026-11-06"
+ },
+ "cls-1YlWSAw0OImVKXFAKbY8_xL77kblaZD3l-2026-11-06T12:13:57.981Z": {
+  "tipo": "grade",
+  "dh": null,
+  "nome": "",
+  "wd": null,
+  "dia": "2026-11-06"
+ },
+ "ocr-falha-2026-11-061TLoCQgfPK-y6DfNttf3Ix_98_FfHC_Az": {
+  "dia": "2026-11-06"
+ },
+ "cls-1TLoCQgfPK-y6DfNttf3Ix_98_FfHC_Az-2026-11-06T12:23:00.666Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-06"
+ },
+ "grade-2026-11-06-1YlWSAw0OImVKXFAKbY8_xL77kblaZD3l-2026-11-06T12:13:57.981Z": {
   "dia": "2026-11-06"
  }
 }
