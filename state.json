@@ -1,238 +1,7 @@
 {
  "_rot": {
-  "dia": "2026-11-06",
-  "n": 59
- },
- "grade-atrasada-2026-11-03": {
-  "dia": "2026-11-03"
- },
- "cls-16Wjr77kq0DHrtyJGCz9vz8aKrpojF2wN-2026-11-03T11:42:45.973Z": {
-  "tipo": "grade",
-  "dh": null,
-  "nome": "",
-  "wd": 1,
-  "dia": "2026-11-03"
- },
- "cls-1Lla5xrP6R4tzHQWvMwoitm6KTtdEcStI-2026-11-03T11:42:50.314Z": {
-  "tipo": "torneio",
-  "dh": [
-   3,
-   11,
-   15,
-   5
-  ],
-  "nome": "THE START",
-  "dia": "2026-11-03"
- },
- "cls-1U-n9UfVqA-qXfbbsQ-Dgvoazq3lgjQS9-2026-11-03T11:42:54.829Z": {
-  "tipo": "torneio",
-  "dh": [
-   3,
-   11,
-   20,
-   5
-  ],
-  "nome": "HK LISNNL",
-  "dia": "2026-11-03"
- },
- "cls-1MU7rMMCl8D7n9ogDNhtZEbasfkN15ByU-2026-11-03T11:42:59.258Z": {
-  "tipo": "sat",
-  "dh": [
-   3,
-   11,
-   17,
-   5
-  ],
-  "nome": "MINI HR 2K",
-  "dia": "2026-11-03"
- },
- "cls-1ONWho71apidCu5M33uPQhzAg9qqLiBkp-2026-11-03T11:43:03.984Z": {
-  "tipo": "sat",
-  "dh": [
-   3,
-   11,
-   17,
-   5
-  ],
-  "nome": "MINI HR 2K",
-  "dia": "2026-11-03"
- },
- "cls-1cUetQ0wkCt4KXpR0Sf_vuRYUzF8QBR4d-2026-11-03T11:43:08.891Z": {
-  "tipo": "torneio",
-  "dh": [
-   3,
-   11,
-   20,
-   5
-  ],
-  "nome": "MINI AK",
-  "dia": "2026-11-03"
- },
- "cls-1PWr18AES611vyVHc5VIrQAbpZFyyJAeo-2026-11-03T11:43:14.722Z": {
-  "tipo": "torneio",
-  "dh": [
-   3,
-   11,
-   17,
-   0
-  ],
-  "nome": "90 CLASSIC",
-  "dia": "2026-11-03"
- },
- "cls-1adg4Id0TrtecNZrmvWF4_s70oC2a2fDe-2026-11-03T11:43:20.047Z": {
-  "tipo": "torneio",
-  "dh": [
-   3,
-   11,
-   19,
-   0
-  ],
-  "nome": "NIGHT MYSTERY",
-  "dia": "2026-11-03"
- },
- "cls-1FAjMUhibDXoi4hjNkpOxvBtbrV1MvDdk-2026-11-03T11:43:24.145Z": {
-  "tipo": "torneio",
-  "dh": [
-   3,
-   11,
-   21,
-   5
-  ],
-  "nome": "THE LOW",
-  "dia": "2026-11-03"
- },
- "cls-1SNTJmXpviCvmBWEr9loVlr2gr7pp7JvC-2026-11-03T11:43:32.046Z": {
-  "tipo": "sat",
-  "dh": [
-   3,
-   11,
-   16,
-   30
-  ],
-  "nome": "THE NIGHT MVSTERV 9K",
-  "dia": "2026-11-03"
- },
- "cls-1fMVHD-K8fjpFgNQ6ceN8E2kpFOLakvGV-2026-11-03T11:43:37.436Z": {
-  "tipo": "sat",
-  "dh": [
-   3,
-   11,
-   17,
-   5
-  ],
-  "nome": "HR LIGHT 4K",
-  "dia": "2026-11-03"
- },
- "cls-1BCc1Izn7tC0OJIfgagGez6kUr1BCf7Ny-2026-11-03T11:43:41.025Z": {
-  "tipo": "torneio",
-  "dh": [
-   3,
-   11,
-   18,
-   5
-  ],
-  "nome": "THE LOW",
-  "dia": "2026-11-03"
- },
- "cls-1aIGB4aIin2xtub6_nOPKTnA4fMAcPfXW-2026-11-03T11:43:46.240Z": {
-  "tipo": "sat",
-  "dh": [
-   3,
-   11,
-   18,
-   5
-  ],
-  "nome": "THE LOW 750",
-  "dia": "2026-11-03"
- },
- "cls-1ETRT3DMRog8iNWmOtFeuIZT6XN-Jt-Fy-2026-11-03T11:44:00.058Z": {
-  "tipo": "sat",
-  "dh": [
-   3,
-   11,
-   18,
-   5
-  ],
-  "nome": "THE LOW 750",
-  "dia": "2026-11-03"
- },
- "cls-1ZU2Cs87Oh1ioZ7uc_Y55Ae2KaNGu-FCv-2026-11-03T11:44:04.645Z": {
-  "tipo": "sat",
-  "dh": [
-   3,
-   11,
-   17,
-   0
-  ],
-  "nome": "IK DO JOJO",
-  "dia": "2026-11-03"
- },
- "cls-1c3F1inwKbNBSzpb4tscZEQD0wT3GjY4a-2026-11-03T11:44:09.070Z": {
-  "tipo": "sat",
-  "dh": [
-   3,
-   11,
-   15,
-   0
-  ],
-  "nome": "IK DO JOJO",
-  "dia": "2026-11-03"
- },
- "cls-1OmklW0SwGCo-FsW_6aU1VsUxRismBGQT-2026-11-03T11:44:13.585Z": {
-  "tipo": "sat",
-  "dh": [
-   3,
-   11,
-   14,
-   30
-  ],
-  "nome": "90 CLASSIC 1K",
-  "dia": "2026-11-03"
- },
- "cls-1Yk5RVVKk22tsh4fotQ3BN65vm1cbK7xZ-2026-11-03T11:44:18.204Z": {
-  "tipo": "sat",
-  "dh": [
-   3,
-   11,
-   12,
-   30
-  ],
-  "nome": "THE START 500",
-  "dia": "2026-11-03"
- },
- "cls-1A5msMVd-AkDHYrwMrexgJ84l1w04MyD3-2026-11-03T11:44:33.889Z": {
-  "tipo": "sat",
-  "dh": [
-   3,
-   11,
-   20,
-   30
-  ],
-  "nome": "3K SUPER",
-  "dia": "2026-11-03"
- },
- "grade-2026-11-03-16Wjr77kq0DHrtyJGCz9vz8aKrpojF2wN-2026-11-03T11:42:45.973Z": {
-  "dia": "2026-11-03"
- },
- "torneio-2026-11-03-1adg4Id0TrtecNZrmvWF4_s70oC2a2fDe": {
-  "dia": "2026-11-03"
- },
- "hshora-11_a7_z5cuJWRSqIZDC38_Ld1qHWPq1bm-2026-11-03T13:45:38.386Z": {
-  "dia": "2026-11-03",
-  "h": 19,
-  "mi": 5
- },
- "hs-2026-11-03-11_a7_z5cuJWRSqIZDC38_Ld1qHWPq1bm": {
-  "dia": "2026-11-03"
- },
- "torneio-2026-11-03-1U-n9UfVqA-qXfbbsQ-Dgvoazq3lgjQS9": {
-  "dia": "2026-11-03"
- },
- "torneio-2026-11-03-1cUetQ0wkCt4KXpR0Sf_vuRYUzF8QBR4d": {
-  "dia": "2026-11-03"
- },
- "torneio-2026-11-03-1FAjMUhibDXoi4hjNkpOxvBtbrV1MvDdk": {
-  "dia": "2026-11-03"
+  "dia": "2026-11-07",
+  "n": 60
  },
  "grade-atrasada-2026-11-04": {
   "dia": "2026-11-04"
@@ -859,5 +628,134 @@
  },
  "grade-2026-11-06-1YlWSAw0OImVKXFAKbY8_xL77kblaZD3l-2026-11-06T12:13:57.981Z": {
   "dia": "2026-11-06"
+ },
+ "ocr-falha-2026-11-071tRsiJDp28z7SA8CLfxPLbhynTM2ujowf": {
+  "dia": "2026-11-07"
+ },
+ "cls-1tRsiJDp28z7SA8CLfxPLbhynTM2ujowf-2026-11-05T23:44:59.804Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "ocr-falha-2026-11-071H7lNAOr6qKtPzIzHkTQ-vp0bfUoxSJIJ": {
+  "dia": "2026-11-07"
+ },
+ "cls-1H7lNAOr6qKtPzIzHkTQ-vp0bfUoxSJIJ-2026-11-05T23:45:52.464Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "ocr-falha-2026-11-071Zrt6Pt6LXhQxeZfLoe1KrC_-Cgl0atmT": {
+  "dia": "2026-11-07"
+ },
+ "cls-1Zrt6Pt6LXhQxeZfLoe1KrC_-Cgl0atmT-2026-11-05T23:46:18.176Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "ocr-falha-2026-11-071hxnmzsq5Mc6EutOq9OaAwTScb7DmLubN": {
+  "dia": "2026-11-07"
+ },
+ "cls-1hxnmzsq5Mc6EutOq9OaAwTScb7DmLubN-2026-11-05T23:46:40.336Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "ocr-falha-2026-11-0716gWCrJ7CXRyutoYEhHaN1acmmkRt55gw": {
+  "dia": "2026-11-07"
+ },
+ "cls-16gWCrJ7CXRyutoYEhHaN1acmmkRt55gw-2026-11-05T23:47:08.895Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "ocr-falha-2026-11-0712H7E-_a75gVCfhE1duZJr3XyZp5yaXhD": {
+  "dia": "2026-11-07"
+ },
+ "cls-12H7E-_a75gVCfhE1duZJr3XyZp5yaXhD-2026-11-05T23:47:29.932Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "ocr-falha-2026-11-071dFpHF6_J8QVD9rPT6CYIUWf_I2i3Myw4": {
+  "dia": "2026-11-07"
+ },
+ "cls-1dFpHF6_J8QVD9rPT6CYIUWf_I2i3Myw4-2026-11-05T23:47:52.418Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "ocr-falha-2026-11-071k5AfsyHQSI5smHKWc2NjO0709nwbTq_1": {
+  "dia": "2026-11-07"
+ },
+ "cls-1k5AfsyHQSI5smHKWc2NjO0709nwbTq_1-2026-11-05T23:48:19.222Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "ocr-falha-2026-11-071N5_Dv5OCj-cYwl9ydvet6j6EDBu5-xYA": {
+  "dia": "2026-11-07"
+ },
+ "cls-1N5_Dv5OCj-cYwl9ydvet6j6EDBu5-xYA-2026-11-05T23:48:38.790Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "ocr-falha-2026-11-071eA9aY5idAi8-jbp5TIdoRQwdrS1Qo9Zl": {
+  "dia": "2026-11-07"
+ },
+ "cls-1eA9aY5idAi8-jbp5TIdoRQwdrS1Qo9Zl-2026-11-05T23:49:03.282Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "cls-1oP4aJiBONxTfFj4yl1gkQ-DIk3R98cCw-2026-11-05T23:49:31.245Z": {
+  "tipo": "torneio",
+  "dh": [
+   7,
+   1,
+   20,
+   5
+  ],
+  "nome": "IPKOI",
+  "dia": "2026-11-07"
+ },
+ "ocr-falha-2026-11-071PMIDtFp7mYJMV6dg5IsHZWE58gFWR5GZ": {
+  "dia": "2026-11-07"
+ },
+ "cls-1PMIDtFp7mYJMV6dg5IsHZWE58gFWR5GZ-2026-11-05T23:49:53.906Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "ocr-falha-2026-11-071ZtNXyO96tYhbV_eE8irBMEb_TkF2-JSM": {
+  "dia": "2026-11-07"
+ },
+ "cls-1ZtNXyO96tYhbV_eE8irBMEb_TkF2-JSM-2026-11-06T18:51:55.409Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-07"
+ },
+ "cls-1ZGUz_J6VxRkH0eE9EUKRJfAzN1rhDdzr-2026-11-06T19:24:10.682Z": {
+  "tipo": "grade",
+  "dh": null,
+  "nome": "",
+  "wd": 5,
+  "dia": "2026-11-07"
+ },
+ "grade-2026-11-07-1ZGUz_J6VxRkH0eE9EUKRJfAzN1rhDdzr-2026-11-06T19:24:10.682Z": {
+  "dia": "2026-11-07"
  }
 }
