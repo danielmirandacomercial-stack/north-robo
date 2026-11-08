@@ -1,7 +1,7 @@
 {
  "_rot": {
   "dia": "2026-11-08",
-  "n": 62
+  "n": 63
  },
  "ocr-falha-2026-11-051nySC5lA6s11eRgh_ySH8FWCT82H_FR_V": {
   "dia": "2026-11-05"
@@ -777,6 +777,16 @@
   "dia": "2026-11-08"
  },
  "grade-2026-11-08-1jJAfmeDvlb5ws5zoPc8rwMZeV12683Ee-2026-11-08T14:43:04.798Z": {
+  "dia": "2026-11-08"
+ },
+ "cls-1OWoxEdnjTbx9P9bAtqp7StGaeQ529Ke9-2026-11-08T15:01:35.590Z": {
+  "tipo": "grade",
+  "dh": null,
+  "nome": "",
+  "wd": 6,
+  "dia": "2026-11-08"
+ },
+ "grade-2026-11-08-1OWoxEdnjTbx9P9bAtqp7StGaeQ529Ke9-2026-11-08T15:01:35.590Z": {
   "dia": "2026-11-08"
  }
 }
