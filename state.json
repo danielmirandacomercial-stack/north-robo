@@ -751,5 +751,16 @@
   "dh": null,
   "nome": "",
   "dia": "2026-11-08"
+ },
+ "cls-1ZgMJSXj-w8H7_ZcAUAGyrOsKJHj8cjwh-2026-11-08T12:15:57.754Z": {
+  "tipo": "torneio",
+  "dh": [
+   8,
+   11,
+   19,
+   35
+  ],
+  "nome": "PKOL",
+  "dia": "2026-11-08"
  }
 }
