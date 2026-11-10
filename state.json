@@ -3,143 +3,6 @@
   "dia": "2026-11-09",
   "n": 66
  },
- "cls-1iZJDdJrNxXDSW0jH5IHvZ6l1MljKxeVZ-2026-11-05T13:15:31.674Z": {
-  "tipo": "grade",
-  "dh": null,
-  "nome": "",
-  "wd": 4,
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-061POBctcMpIzV8dZZ9XXMm76oenSOSUPNw": {
-  "dia": "2026-11-06"
- },
- "cls-1POBctcMpIzV8dZZ9XXMm76oenSOSUPNw-2026-11-05T13:17:52.306Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-061H7AdNB4hkz-D0LBiMl1VObOse_dG_s1U": {
-  "dia": "2026-11-06"
- },
- "cls-1H7AdNB4hkz-D0LBiMl1VObOse_dG_s1U-2026-11-05T13:18:25.363Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-061AGGkvPfqWzoGwOKmItI4wSrNjBX0BTA7": {
-  "dia": "2026-11-06"
- },
- "cls-1AGGkvPfqWzoGwOKmItI4wSrNjBX0BTA7-2026-11-05T19:55:24.533Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-061HF72PIFUMk6dvGymQbxk5C3_Yc1E5GFJ": {
-  "dia": "2026-11-06"
- },
- "cls-1HF72PIFUMk6dvGymQbxk5C3_Yc1E5GFJ-2026-11-05T19:55:54.127Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-061z0MBsz0dXi2GFhad2B1MWMUc0NNBq1RT": {
-  "dia": "2026-11-06"
- },
- "cls-1z0MBsz0dXi2GFhad2B1MWMUc0NNBq1RT-2026-11-05T19:56:30.893Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-061LZr62u9ZxTlbjWskMFcj5CHPANLHo1_c": {
-  "dia": "2026-11-06"
- },
- "cls-1LZr62u9ZxTlbjWskMFcj5CHPANLHo1_c-2026-11-05T19:57:13.132Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-06155D-xjdi7087gbENdSlptPZwYBSfN0ZV": {
-  "dia": "2026-11-06"
- },
- "cls-155D-xjdi7087gbENdSlptPZwYBSfN0ZV-2026-11-05T19:57:53.688Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-061BlhEGqxTp-m0dk6r1eeXaLXF1ryMVxA8": {
-  "dia": "2026-11-06"
- },
- "cls-1BlhEGqxTp-m0dk6r1eeXaLXF1ryMVxA8-2026-11-05T19:58:49.183Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-0611v8bck8p7g367TF-lRTkYXsM7L5laiLU": {
-  "dia": "2026-11-06"
- },
- "cls-11v8bck8p7g367TF-lRTkYXsM7L5laiLU-2026-11-05T19:59:25.144Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-061T1ZgwQRp-fTStqImdJc_BN_aFFKOLQ2C": {
-  "dia": "2026-11-06"
- },
- "cls-1T1ZgwQRp-fTStqImdJc_BN_aFFKOLQ2C-2026-11-05T20:00:30.852Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-061GllZLaX3CPMmnNXO8nIaApRxC57mnVRY": {
-  "dia": "2026-11-06"
- },
- "cls-1GllZLaX3CPMmnNXO8nIaApRxC57mnVRY-2026-11-05T20:01:52.894Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-061WVS0IzgcHHdqPPuhCoV766XbfJpP_5Oo": {
-  "dia": "2026-11-06"
- },
- "cls-1WVS0IzgcHHdqPPuhCoV766XbfJpP_5Oo-2026-11-05T20:02:33.113Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "grade-2026-11-06-1iZJDdJrNxXDSW0jH5IHvZ6l1MljKxeVZ-2026-11-05T13:15:31.674Z": {
-  "dia": "2026-11-06"
- },
- "cls-1YlWSAw0OImVKXFAKbY8_xL77kblaZD3l-2026-11-06T12:13:57.981Z": {
-  "tipo": "grade",
-  "dh": null,
-  "nome": "",
-  "wd": null,
-  "dia": "2026-11-06"
- },
- "ocr-falha-2026-11-061TLoCQgfPK-y6DfNttf3Ix_98_FfHC_Az": {
-  "dia": "2026-11-06"
- },
- "cls-1TLoCQgfPK-y6DfNttf3Ix_98_FfHC_Az-2026-11-06T12:23:00.666Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-06"
- },
- "grade-2026-11-06-1YlWSAw0OImVKXFAKbY8_xL77kblaZD3l-2026-11-06T12:13:57.981Z": {
-  "dia": "2026-11-06"
- },
  "ocr-falha-2026-11-071tRsiJDp28z7SA8CLfxPLbhynTM2ujowf": {
   "dia": "2026-11-07"
  },
@@ -608,5 +471,15 @@
  },
  "grade-2026-11-09-12Jbfe622I8h93UiSsoiRc4CQsu-DaxTO-2026-11-08T19:29:21.865Z": {
   "dia": "2026-11-09"
+ },
+ "hshora-1GdC2wyKRpzRDaOETS6-SC39NsEsS1vlP-2026-11-04T15:13:15.861Z": {
+  "dia": "2026-11-10",
+  "h": 19,
+  "mi": 5
+ },
+ "hshora-1IuCfGN_R8pIl5UGC-iWaxnwjMy7P3GMV-2026-11-04T15:12:56.913Z": {
+  "dia": "2026-11-10",
+  "h": 19,
+  "mi": 5
  }
 }
