@@ -8,6 +8,7 @@ import numpy as np, requests, pytesseract
 from PIL import Image, ImageOps, ImageDraw, ImageFilter
 from scipy.ndimage import gaussian_filter1d
 
+from grade_logo import aplica_logo_grade
 TZ = ZoneInfo("America/Sao_Paulo")
 ANTECEDENCIA_MIN = int(os.environ.get("ANTECEDENCIA_MIN", "15"))
 JANELA_APOS_MIN = int(os.environ.get("JANELA_APOS_MIN", "30"))    # ainda envia se atrasar até X min após o início
@@ -408,9 +409,9 @@ def main(now=None, drive=None):
         antes = any(x.startswith(f"grade-{hoje_s}-") for x in st)
         png = drive.download(f["id"])
         try:
-            out = aplica_logo(Image.open(io.BytesIO(png)))
+            out = aplica_logo_grade(Image.open(io.BytesIO(png)), os.path.join(HERE, "logo_north_branca.png"))
             if out is not None: b = io.BytesIO(); out.save(b, "PNG", optimize=True); png = b.getvalue()
-            else: tg_msg("⚠️ Não achei a logo Union na grade; enviando sem a logo North.")
+            else: tg_msg("⚠️ Não achei o bloco do GP Poker Club na grade; enviando sem alterar.")
         except Exception as e: print("logo grade:", e, file=sys.stderr)
         rot = st.get("_rot", {"dia": hoje_s, "n": 0}); idx = rot["n"]
         if tg_img(png, legenda_grade(hoje, idx, antes)): st[k] = {"dia": hoje_s}; st["_rot"] = {"dia": hoje_s, "n": idx + 1}
