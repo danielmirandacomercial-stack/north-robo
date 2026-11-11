@@ -1,7 +1,7 @@
 {
  "_rot": {
   "dia": "2026-11-11",
-  "n": 71
+  "n": 72
  },
  "hshora-1X_6kYsSxV6KEJeW9TGZXcKMJxM7op7Mm-2026-11-03T14:12:38.676Z": {
   "dia": "2026-11-08",
@@ -630,6 +630,27 @@
   "dia": "2026-11-11"
  },
  "grade-2026-11-11-1eKdyfgbH3lc3heFlrpwff39ynVaxJBzt-2026-11-10T21:21:16.751Z": {
+  "dia": "2026-11-11"
+ },
+ "cls-1i5hvYRhjyN0sfXYc9k227TRvwiYVMDtM-2026-11-11T11:19:48.931Z": {
+  "tipo": "grade",
+  "dh": null,
+  "nome": "",
+  "wd": 2,
+  "dia": "2026-11-11"
+ },
+ "cls-1X5nGrZ6ZPC3Zhr8ChZJxmm59bIgEAu1o-2026-11-11T11:20:07.627Z": {
+  "tipo": "torneio",
+  "dh": [
+   11,
+   11,
+   20,
+   5
+  ],
+  "nome": "AY VAGAS PARAO MAIN DO",
+  "dia": "2026-11-11"
+ },
+ "grade-2026-11-11-1i5hvYRhjyN0sfXYc9k227TRvwiYVMDtM-2026-11-11T11:19:48.931Z": {
   "dia": "2026-11-11"
  }
 }
