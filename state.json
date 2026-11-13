@@ -1,7 +1,7 @@
 {
  "_rot": {
-  "dia": "2026-11-12",
-  "n": 76
+  "dia": "2026-11-13",
+  "n": 77
  },
  "hshora-1GdC2wyKRpzRDaOETS6-SC39NsEsS1vlP-2026-11-04T15:13:15.861Z": {
   "dia": "2026-11-10",
@@ -486,5 +486,129 @@
  },
  "hs-2026-11-12-1UJ0HD5xfgnurPX3LlPXnHOJQdIeZdvZ3": {
   "dia": "2026-11-12"
+ },
+ "cls-1mCPr3siEuy7dmqxCksK1Gw07QFZ-4kw0-2026-11-13T11:10:53.169Z": {
+  "tipo": "grade",
+  "dh": null,
+  "nome": "",
+  "wd": null,
+  "dia": "2026-11-13"
+ },
+ "ocr-falha-2026-11-131UWnyzg1mFX6ALpCPPo2WhttwWA3_Jkvl": {
+  "dia": "2026-11-13"
+ },
+ "cls-1UWnyzg1mFX6ALpCPPo2WhttwWA3_Jkvl-2026-11-13T11:14:56.160Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-13"
+ },
+ "ocr-falha-2026-11-131Ofc3baoYNUCTatDuB6R-p52gaof7Mqr8": {
+  "dia": "2026-11-13"
+ },
+ "cls-1Ofc3baoYNUCTatDuB6R-p52gaof7Mqr8-2026-11-13T11:15:52.503Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-13"
+ },
+ "ocr-falha-2026-11-131XocFYj16tufKO8N38USdmIuoZ9dO-3Qx": {
+  "dia": "2026-11-13"
+ },
+ "cls-1XocFYj16tufKO8N38USdmIuoZ9dO-3Qx-2026-11-13T11:16:11.542Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-13"
+ },
+ "ocr-falha-2026-11-131ela7coNZV88qWMNtMydLd0C-CXeCGWCo": {
+  "dia": "2026-11-13"
+ },
+ "cls-1ela7coNZV88qWMNtMydLd0C-CXeCGWCo-2026-11-13T11:16:32.167Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-13"
+ },
+ "ocr-falha-2026-11-131G7KpgYtyt0KOi0Af17YcoF32o1OJuDTN": {
+  "dia": "2026-11-13"
+ },
+ "cls-1G7KpgYtyt0KOi0Af17YcoF32o1OJuDTN-2026-11-13T11:16:46.763Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-13"
+ },
+ "cls-1k7xKysnyAt4veGtQgpuk30LiEvzLLYi_-2026-11-13T11:17:04.240Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   1,
+   17,
+   5
+  ],
+  "nome": "SD LELILE IIGH ROLLER LIGH",
+  "dia": "2026-11-13"
+ },
+ "cls-1jnx3xO_421XweeqfDvXTqhL_1e0yo-pa-2026-11-13T11:17:20.514Z": {
+  "tipo": "sat",
+  "dh": [
+   3,
+   1,
+   17,
+   5
+  ],
+  "nome": "SD LELILE MINI HIGH ROLLER",
+  "dia": "2026-11-13"
+ },
+ "ocr-falha-2026-11-1315CJGjZNJ3ID9h1anlxuPTHePjiAV4RdK": {
+  "dia": "2026-11-13"
+ },
+ "cls-15CJGjZNJ3ID9h1anlxuPTHePjiAV4RdK-2026-11-13T11:17:37.196Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-13"
+ },
+ "ocr-falha-2026-11-131eX0B-82K-ZkFNqm1ota0PMiQnabMWMkU": {
+  "dia": "2026-11-13"
+ },
+ "cls-1eX0B-82K-ZkFNqm1ota0PMiQnabMWMkU-2026-11-13T11:17:53.415Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-13"
+ },
+ "ocr-falha-2026-11-1317jI7e1NOkefmyeeRT-5Tv6Fx2YOXsUFW": {
+  "dia": "2026-11-13"
+ },
+ "cls-17jI7e1NOkefmyeeRT-5Tv6Fx2YOXsUFW-2026-11-13T11:18:26.273Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-13"
+ },
+ "cls-1pNNBBhGfjrh5qTXb5uEVgamN5yPchsTz-2026-11-13T11:18:43.208Z": {
+  "tipo": "torneio",
+  "dh": [
+   3,
+   1,
+   20,
+   5
+  ],
+  "nome": "LIGHT PKO",
+  "dia": "2026-11-13"
+ },
+ "ocr-falha-2026-11-131i8RtV1HoTUPGXOnNTdHn6a3FRjM8rhM7": {
+  "dia": "2026-11-13"
+ },
+ "cls-1i8RtV1HoTUPGXOnNTdHn6a3FRjM8rhM7-2026-11-13T11:18:58.118Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-13"
+ },
+ "grade-2026-11-13-1mCPr3siEuy7dmqxCksK1Gw07QFZ-4kw0-2026-11-13T11:10:53.169Z": {
+  "dia": "2026-11-13"
  }
 }
