@@ -1,7 +1,7 @@
 {
  "_rot": {
-  "dia": "2026-11-15",
-  "n": 79
+  "dia": "2026-11-16",
+  "n": 80
  },
  "cls-1mCPr3siEuy7dmqxCksK1Gw07QFZ-4kw0-2026-11-13T11:10:53.169Z": {
   "tipo": "grade",
@@ -498,6 +498,16 @@
   "tipo": "outro",
   "dh": null,
   "nome": "",
+  "dia": "2026-11-16"
+ },
+ "cls-1QSUUCr1jOZznmpLgVjrh3i7L6u7cZcGw-2026-11-16T10:27:53.345Z": {
+  "tipo": "grade",
+  "dh": null,
+  "nome": "",
+  "wd": 0,
+  "dia": "2026-11-16"
+ },
+ "grade-2026-11-16-1QSUUCr1jOZznmpLgVjrh3i7L6u7cZcGw-2026-11-16T10:27:53.345Z": {
   "dia": "2026-11-16"
  }
 }
