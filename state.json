@@ -3,138 +3,6 @@
   "dia": "2026-11-16",
   "n": 80
  },
- "cls-1r6w9zhB7j8BbNOxftXno6VwjAc9kWfVU-2026-11-13T17:18:48.554Z": {
-  "tipo": "sat",
-  "dh": [
-   14,
-   1,
-   12,
-   30
-  ],
-  "nome": "SD LELLLE THE START",
-  "dia": "2026-11-14"
- },
- "ocr-falha-2026-11-141EcJBOM24pz3hEnrhBNbvJ_bQjShUsXB3": {
-  "dia": "2026-11-14"
- },
- "cls-1EcJBOM24pz3hEnrhBNbvJ_bQjShUsXB3-2026-11-13T17:19:06.562Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-14"
- },
- "cls-1W2MIWFcCFDFiBvofKefuCoRFe-Iig2KO-2026-11-13T17:19:29.572Z": {
-  "tipo": "torneio",
-  "dh": [
-   14,
-   1,
-   15,
-   5
-  ],
-  "nome": "HE SIAKIF IPKO",
-  "dia": "2026-11-14"
- },
- "ocr-falha-2026-11-1418PdBXiqo-igVWFqnVXbNyIxtYCJ4hzcX": {
-  "dia": "2026-11-14"
- },
- "cls-18PdBXiqo-igVWFqnVXbNyIxtYCJ4hzcX-2026-11-13T17:19:55.255Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-14"
- },
- "cls-1tL55dVkJDg-6MQ0C0UmtQUQEylp6SOn--2026-11-13T17:20:25.912Z": {
-  "tipo": "sat",
-  "dh": [
-   14,
-   1,
-   17,
-   5
-  ],
-  "nome": "SD LEIILE IIGH ROLLER LIGH",
-  "dia": "2026-11-14"
- },
- "cls-1etOzQBJD4gkkVE9qTrM0ADQKo0fCfAIT-2026-11-13T17:20:43.389Z": {
-  "tipo": "sat",
-  "dh": [
-   14,
-   1,
-   17,
-   5
-  ],
-  "nome": "SD LELILE MINI HIGH ROLLER",
-  "dia": "2026-11-14"
- },
- "cls-1Otmc2KBfKTeP0IrdmdOpqO9KUz6_amnp-2026-11-13T17:21:18.504Z": {
-  "tipo": "sat",
-  "dh": [
-   4,
-   1,
-   18,
-   5
-  ],
-  "nome": "SD LELLLE THE LOW",
-  "dia": "2026-11-14"
- },
- "ocr-falha-2026-11-141vr8J4C8wr940BeoaKpK55sE7eI2asi0N": {
-  "dia": "2026-11-14"
- },
- "cls-1vr8J4C8wr940BeoaKpK55sE7eI2asi0N-2026-11-13T17:22:16.062Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-14"
- },
- "ocr-falha-2026-11-141zF7Wg4QlXsiRcKqUECmelkm55g8RklYZ": {
-  "dia": "2026-11-14"
- },
- "cls-1zF7Wg4QlXsiRcKqUECmelkm55g8RklYZ-2026-11-13T17:22:53.139Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-14"
- },
- "cls-1lsl9B-EUp5EgR6F1uAZ-XtZdgPQXTXv2-2026-11-13T23:43:17.015Z": {
-  "tipo": "torneio",
-  "dh": [
-   14,
-   1,
-   20,
-   5
-  ],
-  "nome": "IPKO",
-  "dia": "2026-11-14"
- },
- "cls-1GeDLGEdntfMmeOwEDfH0ArkvApU0qX7F-2026-11-13T23:43:44.796Z": {
-  "tipo": "torneio",
-  "dh": [
-   14,
-   1,
-   17,
-   0
-  ],
-  "nome": "OU UCLA SIL",
-  "dia": "2026-11-14"
- },
- "ocr-falha-2026-11-141gl6Uh7NI84gymsnLPi0IFX1_hGZXoDTV": {
-  "dia": "2026-11-14"
- },
- "cls-1gl6Uh7NI84gymsnLPi0IFX1_hGZXoDTV-2026-11-13T23:45:30.065Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-14"
- },
- "cls-1f7vMb0jA7-S4Jpptco-2z4hLMaUARZOV-2026-11-14T00:37:04.752Z": {
-  "tipo": "grade",
-  "dh": null,
-  "nome": "",
-  "wd": null,
-  "dia": "2026-11-14"
- },
- "grade-2026-11-14-1f7vMb0jA7-S4Jpptco-2z4hLMaUARZOV-2026-11-14T00:37:04.752Z": {
-  "dia": "2026-11-14"
- },
  "ocr-falha-2026-11-151mIjogqWAA_W3G5tfrnqR0C52xXwu2s03": {
   "dia": "2026-11-15"
  },
@@ -388,5 +256,120 @@
  },
  "grade-atrasada-2026-11-17": {
   "dia": "2026-11-17"
+ },
+ "ocr-falha-2026-11-181FIrth5OLhos9j-aZ_ww1OuQf-QOdWM4u": {
+  "dia": "2026-11-18"
+ },
+ "cls-1FIrth5OLhos9j-aZ_ww1OuQf-QOdWM4u-2026-11-17T13:59:48.601Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "ocr-falha-2026-11-1815OIx0nDClSpM2CPtUZdXsiBrUDc00wGo": {
+  "dia": "2026-11-18"
+ },
+ "cls-15OIx0nDClSpM2CPtUZdXsiBrUDc00wGo-2026-11-17T14:00:03.278Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "ocr-falha-2026-11-181Iu_M_aLL8Olb_G9whoE2DNL-93TUe0KG": {
+  "dia": "2026-11-18"
+ },
+ "cls-1Iu_M_aLL8Olb_G9whoE2DNL-93TUe0KG-2026-11-17T14:00:21.269Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "ocr-falha-2026-11-181SvEnjj_u3pWlxO_pgIGCPHyCmFX-aWGO": {
+  "dia": "2026-11-18"
+ },
+ "cls-1SvEnjj_u3pWlxO_pgIGCPHyCmFX-aWGO-2026-11-17T14:01:12.284Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "ocr-falha-2026-11-1818SR9rEn6KAxTCktuWKPoWFc4jp3lThym": {
+  "dia": "2026-11-18"
+ },
+ "cls-18SR9rEn6KAxTCktuWKPoWFc4jp3lThym-2026-11-17T14:01:25.354Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "ocr-falha-2026-11-181ZD42Oxh2Etb9SaZx7sWdzBVD82a9E_DI": {
+  "dia": "2026-11-18"
+ },
+ "cls-1ZD42Oxh2Etb9SaZx7sWdzBVD82a9E_DI-2026-11-17T14:01:45.925Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "ocr-falha-2026-11-181jpwQNsVuPn_D7htuz1nNvsszQMBTvqbN": {
+  "dia": "2026-11-18"
+ },
+ "cls-1jpwQNsVuPn_D7htuz1nNvsszQMBTvqbN-2026-11-17T14:02:01.003Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "ocr-falha-2026-11-181nHLso7tDUUR3rh2MJW0smhWVFhkds9g6": {
+  "dia": "2026-11-18"
+ },
+ "cls-1nHLso7tDUUR3rh2MJW0smhWVFhkds9g6-2026-11-17T14:02:22.029Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "ocr-falha-2026-11-181TVRGrjbGhTWgVh_sYEdbi5RF9sV-kfXW": {
+  "dia": "2026-11-18"
+ },
+ "cls-1TVRGrjbGhTWgVh_sYEdbi5RF9sV-kfXW-2026-11-17T14:02:38.036Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "ocr-falha-2026-11-181rXxM-D6BJGrlFeqjC4NIX_UaWm5NzaUt": {
+  "dia": "2026-11-18"
+ },
+ "cls-1rXxM-D6BJGrlFeqjC4NIX_UaWm5NzaUt-2026-11-17T14:02:57.495Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "ocr-falha-2026-11-181esVUKp8wN-wb5NQQkRatREgKYV2QvFJF": {
+  "dia": "2026-11-18"
+ },
+ "cls-1esVUKp8wN-wb5NQQkRatREgKYV2QvFJF-2026-11-17T14:03:11.107Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "ocr-falha-2026-11-181hgBlWYKm8pvS7XTyH1uP8FMd6wS-JvjM": {
+  "dia": "2026-11-18"
+ },
+ "cls-1hgBlWYKm8pvS7XTyH1uP8FMd6wS-JvjM-2026-11-17T14:05:33.106Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-18"
+ },
+ "cls-1UaJrMmXS5lRXxsOoXayf6wD4oDpkjlkC-2026-11-17T14:09:55.206Z": {
+  "tipo": "grade",
+  "dh": null,
+  "nome": "",
+  "wd": null,
+  "dia": "2026-11-18"
  }
 }
