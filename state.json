@@ -3,9 +3,6 @@
   "dia": "2026-11-19",
   "n": 81
  },
- "grade-atrasada-2026-11-17": {
-  "dia": "2026-11-17"
- },
  "ocr-falha-2026-11-181FIrth5OLhos9j-aZ_ww1OuQf-QOdWM4u": {
   "dia": "2026-11-18"
  },
@@ -361,5 +358,132 @@
  },
  "grade-atrasada-2026-11-20": {
   "dia": "2026-11-20"
+ },
+ "cls-1hGvFt0itaus2g60BWN7opjzXiljxlX-3-2026-11-17T20:44:38.911Z": {
+  "tipo": "grade",
+  "dh": null,
+  "nome": "",
+  "wd": null,
+  "dia": "2026-11-21"
+ },
+ "ocr-falha-2026-11-2110qSJmOPDAz-ynyNXBY_RWg2JgxkeqQjO": {
+  "dia": "2026-11-21"
+ },
+ "cls-10qSJmOPDAz-ynyNXBY_RWg2JgxkeqQjO-2026-11-17T20:47:17.190Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-21"
+ },
+ "cls-11uxhN0Vb_ZkTZql8xZV6otavnDGN8CAR-2026-11-17T20:47:36.496Z": {
+  "tipo": "sat",
+  "dh": [
+   21,
+   1,
+   0,
+   14
+  ],
+  "nome": "SD LELLLE 90 CLASSIC",
+  "dia": "2026-11-21"
+ },
+ "ocr-falha-2026-11-211Uy-_k4s_qgBhaDKQh1gUmVCUi3Cypryv": {
+  "dia": "2026-11-21"
+ },
+ "cls-1Uy-_k4s_qgBhaDKQh1gUmVCUi3Cypryv-2026-11-17T20:47:59.310Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-21"
+ },
+ "ocr-falha-2026-11-211szYp24qa1Iaa4Pa94sj53S_v6uCDUhPy": {
+  "dia": "2026-11-21"
+ },
+ "cls-1szYp24qa1Iaa4Pa94sj53S_v6uCDUhPy-2026-11-17T20:48:42.425Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-21"
+ },
+ "cls-1QeFdu9dlcb2avvnylCkp-6lAYKAykIg0-2026-11-17T20:49:52.632Z": {
+  "tipo": "sat",
+  "dh": [
+   21,
+   1,
+   17,
+   5
+  ],
+  "nome": "SD LELILE IIGH ROLLER LIGH",
+  "dia": "2026-11-21"
+ },
+ "cls-1Vn1BiaUukqTZjXCinFxBY-O1xtiv1UYb-2026-11-17T20:50:08.370Z": {
+  "tipo": "sat",
+  "dh": [
+   21,
+   1,
+   17,
+   5
+  ],
+  "nome": "SD LELILE MINI HIGH ROLLER",
+  "dia": "2026-11-21"
+ },
+ "ocr-falha-2026-11-211y4hffvL1BQJtcBXM_tFQekZeNkTZdSL3": {
+  "dia": "2026-11-21"
+ },
+ "cls-1y4hffvL1BQJtcBXM_tFQekZeNkTZdSL3-2026-11-17T20:50:19.787Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-21"
+ },
+ "ocr-falha-2026-11-211O1WXb0Fzl-xD1JuOW7eNd3JfwoplnXSe": {
+  "dia": "2026-11-21"
+ },
+ "cls-1O1WXb0Fzl-xD1JuOW7eNd3JfwoplnXSe-2026-11-17T20:50:33.213Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-21"
+ },
+ "cls-1SYspuQYPjsy2gn9ZwMuN0vn0WRw1gqbP-2026-11-17T20:50:47.701Z": {
+  "tipo": "torneio",
+  "dh": [
+   21,
+   1,
+   20,
+   5
+  ],
+  "nome": "IVIINI HIGH KOLLEK IPKO",
+  "dia": "2026-11-21"
+ },
+ "cls-19dnP6wRRrfuR3EI_QCHEW3oiRdZkc9av-2026-11-17T20:51:00.193Z": {
+  "tipo": "torneio",
+  "dh": [
+   21,
+   1,
+   20,
+   5
+  ],
+  "nome": "IPKO",
+  "dia": "2026-11-21"
+ },
+ "cls-133W9O2Ne7jyMerUUrTOWdE1zYi-M1cHR-2026-11-17T20:51:23.011Z": {
+  "tipo": "torneio",
+  "dh": [
+   21,
+   1,
+   21,
+   5
+  ],
+  "nome": "HE LUVV PKO",
+  "dia": "2026-11-21"
+ },
+ "ocr-falha-2026-11-211dGKNt8FOwuQ0x0oVcsuW2VqhbPWcp43t": {
+  "dia": "2026-11-21"
+ },
+ "cls-1dGKNt8FOwuQ0x0oVcsuW2VqhbPWcp43t-2026-11-17T20:55:42.185Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-21"
  }
 }
