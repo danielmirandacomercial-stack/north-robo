@@ -1,124 +1,4 @@
 {
- "cls-1urnqYLD0kbaBEP9vbeOc5iM4jwfmp1vZ-2026-11-23T12:27:48.590Z": {
-  "tipo": "grade",
-  "dh": null,
-  "nome": "",
-  "wd": 0,
-  "dia": "2026-11-23"
- },
- "ocr-falha-2026-11-2312bA1pgDbdk01-WO4wdDlwJN_cxFEoSjc": {
-  "dia": "2026-11-23"
- },
- "cls-12bA1pgDbdk01-WO4wdDlwJN_cxFEoSjc-2026-11-23T12:27:57.902Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "ocr-falha-2026-11-231E8ynGtbn4_RUIMpcS5mQsKV4RVdxqDox": {
-  "dia": "2026-11-23"
- },
- "cls-1E8ynGtbn4_RUIMpcS5mQsKV4RVdxqDox-2026-11-23T12:28:18.199Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "ocr-falha-2026-11-231lxEOL_cATdYmpi3cEEU-nO4dN8Q-6Sx8": {
-  "dia": "2026-11-23"
- },
- "cls-1lxEOL_cATdYmpi3cEEU-nO4dN8Q-6Sx8-2026-11-23T12:28:36.432Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "ocr-falha-2026-11-231LR7mNcjp_2qCpr3fEaEyF6sY_Tv_yfuc": {
-  "dia": "2026-11-23"
- },
- "cls-1LR7mNcjp_2qCpr3fEaEyF6sY_Tv_yfuc-2026-11-23T12:28:48.000Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "ocr-falha-2026-11-231NZkAi3sHjG71KOT-yQN90hna85qz5x2z": {
-  "dia": "2026-11-23"
- },
- "cls-1NZkAi3sHjG71KOT-yQN90hna85qz5x2z-2026-11-23T12:29:00.858Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "ocr-falha-2026-11-231saxxZoH6sGFQcbc9fBksmq2qB3QPlJd0": {
-  "dia": "2026-11-23"
- },
- "cls-1saxxZoH6sGFQcbc9fBksmq2qB3QPlJd0-2026-11-23T12:29:22.352Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "ocr-falha-2026-11-2318s0dVlJnX6Iti2niA5bKTr0uY2B5MxiM": {
-  "dia": "2026-11-23"
- },
- "cls-18s0dVlJnX6Iti2niA5bKTr0uY2B5MxiM-2026-11-23T12:29:39.813Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "ocr-falha-2026-11-231uVrK7SfeCl9ckBvnN9OTCvaXvmzB0_e6": {
-  "dia": "2026-11-23"
- },
- "cls-1uVrK7SfeCl9ckBvnN9OTCvaXvmzB0_e6-2026-11-23T12:29:51.902Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "ocr-falha-2026-11-231IBgIKNfJsN2IXWHO5YV1sMxt8kdPYp81": {
-  "dia": "2026-11-23"
- },
- "cls-1IBgIKNfJsN2IXWHO5YV1sMxt8kdPYp81-2026-11-23T12:30:03.650Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "ocr-falha-2026-11-2312pwUQzR-9Kdgphi6uj6eRfcj15hYFOJ7": {
-  "dia": "2026-11-23"
- },
- "cls-12pwUQzR-9Kdgphi6uj6eRfcj15hYFOJ7-2026-11-23T12:30:16.573Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "cls-1aZEIERFDLZWZI9v8w8RuyJRVQJvgYgWA-2026-11-23T12:30:31.336Z": {
-  "tipo": "torneio",
-  "dh": [
-   22,
-   1,
-   20,
-   0
-  ],
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "ocr-falha-2026-11-231HVWfCZN7oxGPGtUEW7F17tm7mBSAc03R": {
-  "dia": "2026-11-23"
- },
- "cls-1HVWfCZN7oxGPGtUEW7F17tm7mBSAc03R-2026-11-23T12:30:43.270Z": {
-  "tipo": "outro",
-  "dh": null,
-  "nome": "",
-  "dia": "2026-11-23"
- },
- "grade-2026-11-23-1urnqYLD0kbaBEP9vbeOc5iM4jwfmp1vZ-2026-11-23T12:27:48.590Z": {
-  "dia": "2026-11-23"
- },
  "_rot": {
   "dia": "2026-11-26",
   "n": 3
@@ -482,5 +362,122 @@
  },
  "grade-2026-11-26-1qgbNj--nCeMs1Q1mHYWNRSnze__r7Via-2026-11-24T13:28:49.883Z": {
   "dia": "2026-11-26"
+ },
+ "cls-1LKxzx9kcXq8EHX5cs2zK-FQfRcWAWJUK-2026-11-24T13:43:59.328Z": {
+  "tipo": "grade",
+  "dh": null,
+  "nome": "",
+  "wd": null,
+  "dia": "2026-11-27"
+ },
+ "ocr-falha-2026-11-271iojo22MtemrxhyKUYRCncv1OWel1z5EJ": {
+  "dia": "2026-11-27"
+ },
+ "cls-1iojo22MtemrxhyKUYRCncv1OWel1z5EJ-2026-11-24T13:44:49.271Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-27"
+ },
+ "ocr-falha-2026-11-271PqafkBV3rteW2aPsivWldKOK0PGy2n2h": {
+  "dia": "2026-11-27"
+ },
+ "cls-1PqafkBV3rteW2aPsivWldKOK0PGy2n2h-2026-11-24T13:45:01.934Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-27"
+ },
+ "ocr-falha-2026-11-271weCQerUQ3EWNx_3Rc3cYVGvJGxpGa6M8": {
+  "dia": "2026-11-27"
+ },
+ "cls-1weCQerUQ3EWNx_3Rc3cYVGvJGxpGa6M8-2026-11-24T13:45:20.528Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-27"
+ },
+ "ocr-falha-2026-11-271VyBsAXsCVhBD6MThn7PXfx-TY0cop9XU": {
+  "dia": "2026-11-27"
+ },
+ "cls-1VyBsAXsCVhBD6MThn7PXfx-TY0cop9XU-2026-11-24T13:46:08.498Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-27"
+ },
+ "ocr-falha-2026-11-271_YM2AI-l_LqAEOqPxh8P7XUgjn7eZWbS": {
+  "dia": "2026-11-27"
+ },
+ "cls-1_YM2AI-l_LqAEOqPxh8P7XUgjn7eZWbS-2026-11-24T13:46:20.513Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-27"
+ },
+ "ocr-falha-2026-11-271jtlR4q09H9PZrMVW2InpIEf_zpT-N4DR": {
+  "dia": "2026-11-27"
+ },
+ "cls-1jtlR4q09H9PZrMVW2InpIEf_zpT-N4DR-2026-11-24T13:46:35.247Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-27"
+ },
+ "ocr-falha-2026-11-271nZdcfqiShKHuO6rl9_9cQ_BPAgoj-pe2": {
+  "dia": "2026-11-27"
+ },
+ "cls-1nZdcfqiShKHuO6rl9_9cQ_BPAgoj-pe2-2026-11-24T13:46:55.054Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-27"
+ },
+ "ocr-falha-2026-11-271B8xwXBS7pPlcTpEerDkrjT6wevO5clCw": {
+  "dia": "2026-11-27"
+ },
+ "cls-1B8xwXBS7pPlcTpEerDkrjT6wevO5clCw-2026-11-24T13:47:08.048Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-27"
+ },
+ "ocr-falha-2026-11-2710PH5n4tB4c6pJzDSPBOZhkznIsa2KG-M": {
+  "dia": "2026-11-27"
+ },
+ "cls-10PH5n4tB4c6pJzDSPBOZhkznIsa2KG-M-2026-11-24T13:47:18.601Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-27"
+ },
+ "ocr-falha-2026-11-271DHDvNFILqrjIYgpciMPVIyMSWQpuvdTi": {
+  "dia": "2026-11-27"
+ },
+ "cls-1DHDvNFILqrjIYgpciMPVIyMSWQpuvdTi-2026-11-24T13:47:31.174Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-27"
+ },
+ "cls-1LreU6DXYfjK4EPAqxsyPvZl7-5xiFWMC-2026-11-24T13:47:42.499Z": {
+  "tipo": "torneio",
+  "dh": [
+   27,
+   1,
+   20,
+   5
+  ],
+  "nome": "LIGHT PKO",
+  "dia": "2026-11-27"
+ },
+ "ocr-falha-2026-11-271Rse-0nnDBlxn6fzoCuKBpePDvxqnVCLv": {
+  "dia": "2026-11-27"
+ },
+ "cls-1Rse-0nnDBlxn6fzoCuKBpePDvxqnVCLv-2026-11-24T13:48:09.560Z": {
+  "tipo": "outro",
+  "dh": null,
+  "nome": "",
+  "dia": "2026-11-27"
  }
 }
